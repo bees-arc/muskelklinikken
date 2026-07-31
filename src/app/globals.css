@@ -460,12 +460,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .hero-title {
   font-family: var(--font-sans);
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: clamp(1.8rem, 8vw, 5rem);
   font-weight: 900;
   line-height: 1.0;
   letter-spacing: -0.04em;
   color: #ffffff;
   margin-bottom: 24px;
+  word-break: break-word;
 }
 .hero-title em {
   font-style: normal;
@@ -548,9 +549,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .stack-scene {
   position: relative;
-  width: min(860px, calc(100% - 96px));
+  width: min(1200px, 100%);
+  padding-inline: 48px;
   margin-inline: auto;
   padding-bottom: 240px;
+}
+@media (max-width: 768px) {
+  .stack-scene {
+    padding-inline: 20px;
+  }
 }
 
 .stack-card {
