@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 120)
@@ -13,17 +14,18 @@ export default function Header() {
   }, [])
 
   return (
-    <header className={`header${scrolled ? ' scrolled' : ''}`}>
+    <header className={`header${scrolled ? ' scrolled' : ''}${mobileOpen ? ' mobile-open' : ''}`}>
       <div className="header-inner">
-        <a href="#" className="logo-link" aria-label="Muskelklinikken Hjem">
+        <a href="#" className="logo-link" aria-label="Muskelklinikken Hjem" onClick={() => setMobileOpen(false)}>
           <img
             src="/images/muskel_logo.webp"
             alt="Muskelklinikken"
             className="logo-img"
-            style={{ height: '44px', width: 'auto' }}
+            style={{ height: '44px', width: 'auto', flexShrink: 0 }}
           />
         </a>
 
+        {/* Desktop Navigation */}
         <nav className="nav-center" aria-label="Hovedmeny">
           <a href="#om-oss" className="nav-link">Om oss</a>
           <a href="#coaching" className="nav-link">Coaching</a>
@@ -41,7 +43,8 @@ export default function Header() {
           <a href="#kontakt" className="nav-link">Kontakt</a>
         </nav>
 
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+        {/* Desktop Action Buttons */}
+        <div className="header-actions">
           <a
             href="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=fb9771b2-5459-11e9-89e4-96d3108deae4"
             target="_blank"
@@ -56,6 +59,59 @@ export default function Header() {
           >
             Ring oss
           </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-expanded={mobileOpen}
+          aria-label="Toggle menu"
+        >
+          <div className="hamburger-box">
+            <span className={`hamburger-line line-1 ${mobileOpen ? 'active' : ''}`} />
+            <span className={`hamburger-line line-2 ${mobileOpen ? 'active' : ''}`} />
+            <span className={`hamburger-line line-3 ${mobileOpen ? 'active' : ''}`} />
+          </div>
+        </button>
+
+        {/* Mobile Navigation Dropdown Overlay */}
+        <div className={`mobile-nav-overlay ${mobileOpen ? 'open' : ''}`}>
+          <nav className="mobile-nav-menu">
+            <a href="#om-oss" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Om oss</a>
+            <a href="#coaching" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Coaching</a>
+            <a href="#artikler" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Fagstoff</a>
+            <a href="#priser" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Priser</a>
+            
+            <div className="mobile-nav-submenu-title">Tjenester</div>
+            <div className="mobile-nav-submenu">
+              <a href="#ultralyd" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Ultralyddiagnostikk</a>
+              <a href="#injeksjon" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Injeksjonsterapi</a>
+              <a href="#bedrift" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Bedriftstrening</a>
+              <a href="#pt" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Personlig trening</a>
+            </div>
+
+            <a href="#kontakt" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Kontakt</a>
+            
+            <div className="mobile-nav-buttons">
+              <a
+                href="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=fb9771b2-5459-11e9-89e4-96d3108deae4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-pill btn-light btn-md"
+                onClick={() => setMobileOpen(false)}
+              >
+                Book behandling
+              </a>
+              <a
+                href="tel:+4791907760"
+                className="btn btn-pill btn-outline-light btn-md"
+                onClick={() => setMobileOpen(false)}
+              >
+                Ring oss: 919 07 760
+              </a>
+            </div>
+          </nav>
         </div>
       </div>
     </header>
