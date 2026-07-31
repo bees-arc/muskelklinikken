@@ -7,6 +7,16 @@ export default function Hero() {
         className="hero-bg-img"
         aria-hidden="true"
       />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="hero-bg-video"
+        aria-hidden="true"
+      >
+        <source src="/videos/hero_bg.mp4" type="video/mp4" />
+      </video>
       <div className="hero-bg-overlay" aria-hidden="true" />
       <div className="container">
         <ScrollReveal className="hero-content">
