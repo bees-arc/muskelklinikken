@@ -540,7 +540,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    STEPS — STICKY STACKING CARDS
 ═══════════════════════════════════════════ */
 .steps-section {
-  padding-block: 140px;
+  padding-top: 140px;
+  padding-bottom: 80px;
   background: var(--bg-surface);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -552,7 +553,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: min(1200px, 100%);
   padding-inline: 48px;
   margin-inline: auto;
-  padding-bottom: 240px;
+  padding-bottom: 60px;
 }
 @media (max-width: 768px) {
   .stack-scene {
