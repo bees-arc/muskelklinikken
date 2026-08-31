@@ -31,7 +31,7 @@ export default function OmOss() {
               <img 
                 src="https://muskelklinikken.no/wp-content/uploads/2023/12/Rectangle-154.webp" 
                 alt="Muskelklinikken Team" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.8) contrast(1.05) brightness(0.95)' }} 
               />
             </div>
             

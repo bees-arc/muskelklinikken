@@ -36,7 +36,7 @@ export default function PersonligTrening() {
               <img 
                 src="https://muskelklinikken.no/wp-content/uploads/2023/12/Rectangle-160.webp" 
                 alt="Personlig trening hos Muskelklinikken" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.8) contrast(1.05) brightness(0.95)' }} 
               />
             </div>
             

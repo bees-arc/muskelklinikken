@@ -37,7 +37,7 @@ export default function Ultralyddiagnostikk() {
                 <img 
                   src="/images/service_injection.png" 
                   alt="Ultralyddiagnostikk hos Muskelklinikken" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.8) contrast(1.05) brightness(0.95)' }} 
                 />
               </div>
             </div>
