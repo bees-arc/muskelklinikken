@@ -2,10 +2,27 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 const COACHES = [
-  { name: 'Finn-Tore Camacho Bjørnsand', role: 'Gründer & Prestasjonscoach', note: 'Kun private kunder' },
-  { name: 'Filip', role: 'Personlig Trener & Fysioterapeut' },
-  { name: 'Trine Marie Skråmestø', role: 'Personlig Trener & Terapeut' },
-  { name: 'Kristian', role: 'Personlig Trener & Fysioterapeut' },
+  { 
+    name: 'Finn-Tore Camacho Bjørnsand', 
+    role: 'Gründer & Prestasjonscoach', 
+    image: '/images/team/Frame-14-2.webp',
+    note: 'Kun private kunder' 
+  },
+  { 
+    name: 'Filip', 
+    role: 'Personlig Trener & Fysioterapeut',
+    image: '/images/team/mk02-scaled.jpg'
+  },
+  { 
+    name: 'Trine Marie Skråmestø', 
+    role: 'Personlig Trener & Terapeut',
+    image: '/images/team/IMG_6671.webp'
+  },
+  { 
+    name: 'Kristian', 
+    role: 'Personlig Trener & Fysioterapeut',
+    image: '/images/team/Rectangle-183.webp'
+  },
 ]
 
 export default function PersonligTrening() {
@@ -61,17 +78,22 @@ export default function PersonligTrening() {
                     style={{ 
                       backgroundColor: 'var(--bg-card)', 
                       border: '1px solid var(--border)', 
-                      borderRadius: '16px', 
-                      padding: '36px 30px', 
+                      borderRadius: '20px', 
+                      padding: '36px 24px', 
                       display: 'flex', 
                       flexDirection: 'column', 
                       alignItems: 'center', 
                       textAlign: 'center',
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
+                      boxShadow: '0 4px 20px rgba(0,0,0,0.02)',
+                      transition: 'transform 0.2s ease, box-shadow 0.2s ease'
                     }}
                   >
-                    <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'var(--bg-surface)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.2rem', marginBottom: '20px' }}>
-                      
+                    <div style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--border)', marginBottom: '20px', backgroundColor: 'var(--bg-surface)', flexShrink: 0 }}>
+                      <img 
+                        src={coach.image} 
+                        alt={coach.name} 
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                      />
                     </div>
                     <h3 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '6px', color: 'var(--text-1)' }}>{coach.name}</h3>
                     <p style={{ fontSize: '0.85rem', color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, marginBottom: coach.note ? '10px' : '20px' }}>{coach.role}</p>

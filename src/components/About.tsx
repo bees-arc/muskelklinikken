@@ -8,7 +8,7 @@ export default function About() {
         <div className="about-grid">
           <ScrollReveal className="about-image-col">
             <img
-              src="/images/hero_wallpaper.webp"
+              src="/images/om_oss_team_banner.jpg"
               alt="Muskelklinikken team"
               className="about-img"
             />

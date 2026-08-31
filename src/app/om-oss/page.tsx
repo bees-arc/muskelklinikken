@@ -2,15 +2,60 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 const TEAM = [
-  { name: 'Finn-Tore Camacho Bjørnsand', role: 'Gründer & Faglig Leder', slug: 'finn-tore' },
-  { name: 'Dr. Per Øystein', role: 'Spesialist i Fysikalsk Medisin & Lege', slug: 'per-oystein' },
-  { name: 'Carlos Alexander', role: 'Muskelterapeut', slug: 'carlos-alexander' },
-  { name: 'Filip', role: 'Fysioterapeut & Trener', slug: 'filip' },
-  { name: 'Ahmed', role: 'Fysioterapeut & Osteopat', slug: 'ahmed' },
-  { name: 'Marius', role: 'Fysioterapeut', slug: 'marius' },
-  { name: 'Trine Marie Skråmestø', role: 'Muskelterapeut & Personlig Trener', slug: 'trine-marie-skramesto' },
-  { name: 'Victoria', role: 'Fysioterapeut', slug: 'victoria' },
-  { name: 'Kristian', role: 'Fysioterapeut & Trener', slug: 'kristian' },
+  { 
+    name: 'Finn-Tore Camacho Bjørnsand', 
+    role: 'Gründer & Faglig Leder', 
+    image: '/images/team/Frame-14-2.webp',
+    slug: 'finn-tore' 
+  },
+  { 
+    name: 'Dr. Per Øystein', 
+    role: 'Spesialist i Fysikalsk Medisin & Lege', 
+    image: '/images/team/Rectangle-185.webp',
+    slug: 'per-oystein' 
+  },
+  { 
+    name: 'Carlos Alexander', 
+    role: 'Muskelterapeut', 
+    image: '/images/team/Alexander-.jpg',
+    slug: 'carlos-alexander' 
+  },
+  { 
+    name: 'Filip', 
+    role: 'Fysioterapeut & Trener', 
+    image: '/images/team/mk02-scaled.jpg',
+    slug: 'filip' 
+  },
+  { 
+    name: 'Ahmed', 
+    role: 'Fysioterapeut & Osteopat', 
+    image: '/images/team/Ahmed-scaled.jpg',
+    slug: 'ahmed' 
+  },
+  { 
+    name: 'Marius', 
+    role: 'Fysioterapeut', 
+    image: '/images/team/Marius-scaled.jpg',
+    slug: 'marius' 
+  },
+  { 
+    name: 'Trine Marie Skråmestø', 
+    role: 'Muskelterapeut & Personlig Trener', 
+    image: '/images/team/IMG_6671.webp',
+    slug: 'trine-marie-skramesto' 
+  },
+  { 
+    name: 'Victoria', 
+    role: 'Fysioterapeut', 
+    image: '/images/team/Frame-14-1-1.webp',
+    slug: 'victoria' 
+  },
+  { 
+    name: 'Kristian', 
+    role: 'Fysioterapeut & Trener', 
+    image: '/images/team/Rectangle-183.webp',
+    slug: 'kristian' 
+  },
 ]
 
 export default function OmOss() {
@@ -31,11 +76,11 @@ export default function OmOss() {
               Velkommen til Muskelklinikken – ditt kompetansesenter for helse og velvære!
             </p>
 
-            <div style={{ width: '100%', height: '440px', borderRadius: '24px', overflow: 'hidden', marginBottom: '50px', border: '1px solid var(--border)' }}>
+            <div style={{ width: '100%', height: '460px', borderRadius: '24px', overflow: 'hidden', marginBottom: '50px', border: '1px solid var(--border)', boxShadow: '0 8px 30px rgba(0,0,0,0.06)' }}>
               <img 
-                src="/images/om_oss_lounge_banner.jpg" 
-                alt="Muskelklinikken Lounge" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                src="/images/om_oss_team_banner.jpg" 
+                alt="Muskelklinikken Team" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} 
               />
             </div>
             
@@ -64,20 +109,25 @@ export default function OmOss() {
                     style={{ 
                       backgroundColor: 'var(--bg-card)', 
                       border: '1px solid var(--border)', 
-                      borderRadius: '16px', 
-                      padding: '36px 30px', 
+                      borderRadius: '20px', 
+                      padding: '36px 24px', 
                       display: 'flex', 
                       flexDirection: 'column', 
                       alignItems: 'center', 
                       textAlign: 'center',
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
+                      boxShadow: '0 4px 20px rgba(0,0,0,0.02)',
+                      transition: 'transform 0.2s ease, box-shadow 0.2s ease'
                     }}
                   >
-                    <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'var(--bg-surface)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.2rem', marginBottom: '20px' }}>
-                      
+                    <div style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--border)', marginBottom: '20px', backgroundColor: 'var(--bg-surface)', flexShrink: 0 }}>
+                      <img 
+                        src={member.image} 
+                        alt={member.name} 
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                      />
                     </div>
                     <h3 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '6px', color: 'var(--text-1)' }}>{member.name}</h3>
-                    <p style={{ fontSize: '0.85rem', fontFamily: 'var(--font-sans)', color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, marginBottom: '20px' }}>{member.role}</p>
+                    <p style={{ fontSize: '0.85rem', fontFamily: 'var(--font-sans)', color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, marginBottom: '24px', lineHeight: 1.4 }}>{member.role}</p>
                     <a 
                       href="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=fb9771b2-5459-11e9-89e4-96d3108deae4" 
                       target="_blank"
