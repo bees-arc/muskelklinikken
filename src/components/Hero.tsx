@@ -26,8 +26,12 @@ export default function Hero() {
             Muskelklinikken
           </h1>
 
-          <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.82)', marginBottom: '40px', maxWidth: '600px', marginInline: 'auto', lineHeight: 1.65 }}>
+          <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.82)', marginBottom: '16px', maxWidth: '600px', marginInline: 'auto', lineHeight: 1.65 }}>
             Ditt kompetansesenter for helse og velvære
+          </p>
+
+          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', marginBottom: '40px', fontWeight: 600 }}>
+            ⚠️ Merk: Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.
           </p>
 
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>

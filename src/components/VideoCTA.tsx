@@ -75,6 +75,10 @@ export default function VideoCTA() {
             </div>
           </div>
 
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', marginBottom: '20px', fontWeight: 600 }}>
+            ⚠️ Merk: Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.
+          </p>
+
           <a
             href="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=fb9771b2-5459-11e9-89e4-96d3108deae4"
             target="_blank"

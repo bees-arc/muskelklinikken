@@ -27,20 +27,20 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="nav-center" aria-label="Hovedmeny">
-          <a href="#om-oss" className="nav-link">Om oss</a>
-          <a href="#coaching" className="nav-link">Coaching</a>
-          <a href="#artikler" className="nav-link">Fagstoff</a>
-          <a href="#priser" className="nav-link">Priser</a>
+          <a href="/om-oss" className="nav-link">Om oss</a>
+          <a href="https://coachcamacho.com/en/" target="_blank" rel="noopener noreferrer" className="nav-link">Coaching</a>
+          <a href="/artikler" className="nav-link">Fagstoff</a>
+          <a href="/priser" className="nav-link">Priser</a>
           <div className="nav-dropdown-group">
-            <a href="#tjenester" className="nav-link dropdown-toggle">Tjenester ▾</a>
+            <span className="nav-link dropdown-toggle" style={{ cursor: 'pointer' }}>Tjenester ▾</span>
             <div className="nav-dropdown">
-              <a href="#ultralyd" className="dropdown-link">Ultralyddiagnostikk</a>
-              <a href="#injeksjon" className="dropdown-link">Injeksjonsterapi</a>
-              <a href="#bedrift" className="dropdown-link">Bedriftstrening</a>
-              <a href="#pt" className="dropdown-link">Personlig trening</a>
+              <a href="/ultralyddiagnostikk" className="dropdown-link">Ultralyddiagnostikk</a>
+              <a href="/bedriftsavtale" className="dropdown-link">Bedriftsavtale</a>
+              <a href="/personlig-trening" className="dropdown-link">Personlig trening</a>
+              <a href="/fysikalske-behandling" className="dropdown-link">Fysikalske behandling</a>
             </div>
           </div>
-          <a href="#kontakt" className="nav-link">Kontakt</a>
+          <a href="/kontakt" className="nav-link">Kontakt</a>
         </nav>
 
         {/* Desktop Action Buttons */}
@@ -78,20 +78,20 @@ export default function Header() {
         {/* Mobile Navigation Dropdown Overlay */}
         <div className={`mobile-nav-overlay ${mobileOpen ? 'open' : ''}`}>
           <nav className="mobile-nav-menu">
-            <a href="#om-oss" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Om oss</a>
-            <a href="#coaching" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Coaching</a>
-            <a href="#artikler" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Fagstoff</a>
-            <a href="#priser" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Priser</a>
+            <a href="/om-oss" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Om oss</a>
+            <a href="https://coachcamacho.com/en/" target="_blank" rel="noopener noreferrer" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Coaching</a>
+            <a href="/artikler" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Fagstoff</a>
+            <a href="/priser" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Priser</a>
             
             <div className="mobile-nav-submenu-title">Tjenester</div>
             <div className="mobile-nav-submenu">
-              <a href="#ultralyd" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Ultralyddiagnostikk</a>
-              <a href="#injeksjon" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Injeksjonsterapi</a>
-              <a href="#bedrift" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Bedriftstrening</a>
-              <a href="#pt" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Personlig trening</a>
+              <a href="/ultralyddiagnostikk" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Ultralyddiagnostikk</a>
+              <a href="/bedriftsavtale" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Bedriftsavtale</a>
+              <a href="/personlig-trening" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Personlig trening</a>
+              <a href="/fysikalske-behandling" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Fysikalske behandling</a>
             </div>
 
-            <a href="#kontakt" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Kontakt</a>
+            <a href="/kontakt" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Kontakt</a>
             
             <div className="mobile-nav-buttons">
               <a
