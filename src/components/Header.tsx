@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className={`header${scrolled ? ' scrolled' : ''}${mobileOpen ? ' mobile-open' : ''}`}>
       <div className="header-inner">
-        <a href="#" className="logo-link" aria-label="Muskelklinikken Hjem" onClick={() => setMobileOpen(false)}>
+        <a href="/" className="logo-link" aria-label="Muskelklinikken Hjem" onClick={() => setMobileOpen(false)}>
           <img
             src="/images/muskel_logo.webp"
             alt="Muskelklinikken"

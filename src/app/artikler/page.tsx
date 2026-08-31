@@ -12,7 +12,7 @@ export default function ArtiklerIndex() {
             <span className="overline" style={{ display: 'block', marginBottom: '12px', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 700 }}>
               Fagstoff & Artikler
             </span>
-            <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)' }}>
+            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
               Våre artikler
             </h1>
             <p style={{ fontSize: '1.15rem', color: 'var(--text-2)', maxWidth: '800px', marginBottom: '60px', lineHeight: 1.6 }}>
@@ -45,10 +45,10 @@ export default function ArtiklerIndex() {
                   )}
                   <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                     <span style={{ fontSize: '0.85rem', color: 'var(--text-3)', fontWeight: 600, marginBottom: '12px', display: 'block' }}>
-                      📅 {article.date}
+                      {article.date}
                     </span>
                     
-                    <h2 style={{ fontSize: '1.35rem', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.3, marginBottom: '16px', color: 'var(--text-1)' }}>
+                    <h2 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', lineHeight: 1.3, marginBottom: '16px', color: 'var(--text-1)' }}>
                       <a href={`/artikler/${article.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                         {article.title}
                       </a>

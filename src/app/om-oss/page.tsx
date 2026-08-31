@@ -23,7 +23,7 @@ export default function OmOss() {
             <span className="overline" style={{ display: 'block', marginBottom: '12px', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 700 }}>
               Om oss
             </span>
-            <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.15, marginBottom: '40px', color: 'var(--text-1)' }}>
+            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '40px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
               Muskelklinikken – Tverrfaglig helsesenter for behandling, trening og varig endring
             </h1>
 
@@ -35,7 +35,7 @@ export default function OmOss() {
               />
             </div>
             
-            <div style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text-2)', maxWidth: '900px', marginBottom: '80px' }}>
+            <div style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text-2)', maxWidth: '900px', marginBottom: '80px', fontFamily: 'var(--font-body)' }}>
               <p style={{ marginBottom: '24px' }}>
                 Muskelklinikken er et moderne helsesenter og personlig treningsstudio der du får behandling og oppfølging av autorisert helsepersonell med høy faglig kompetanse. Vi tilbyr en helhetlig og evidensbasert tilnærming for å redusere smerter, styrke kroppen og forbedre livskvalitet. Vi kombinerer behandling og trening i et tett samarbeid mellom terapeuter og trenere. Hos oss får du skreddersydd hjelp basert på dine behov – enten du ønsker å prestere bedre, komme tilbake etter skade eller ta bedre vare på helsa.
               </p>
@@ -51,8 +51,8 @@ export default function OmOss() {
             </div>
             
             <div style={{ borderTop: '1px solid var(--border)', paddingTop: '60px' }}>
-              <h2 style={{ fontSize: '2.2rem', fontFamily: 'var(--font-serif)', marginBottom: '12px', color: 'var(--text-1)' }}>Teamet</h2>
-              <p style={{ color: 'var(--text-2)', marginBottom: '40px', fontSize: '1.05rem' }}>Våre terapeuter underviser internasjonalt, holder seg kontinuerlig oppdatert og samarbeider tett for å gi deg best mulig oppfølging.</p>
+              <h2 style={{ fontSize: '2rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '12px', color: 'var(--text-1)' }}>Teamet</h2>
+              <p style={{ color: 'var(--text-2)', marginBottom: '40px', fontSize: '1.05rem', fontFamily: 'var(--font-body)' }}>Våre terapeuter underviser internasjonalt, holder seg kontinuerlig oppdatert og samarbeider tett for å gi deg best mulig oppfølging.</p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '30px' }}>
                 {TEAM.map((member) => (
                   <div 
@@ -70,10 +70,10 @@ export default function OmOss() {
                     }}
                   >
                     <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'var(--bg-surface)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.2rem', marginBottom: '20px' }}>
-                      👤
+                      
                     </div>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '6px', color: 'var(--text-1)' }}>{member.name}</h3>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, marginBottom: '20px' }}>{member.role}</p>
+                    <h3 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '6px', color: 'var(--text-1)' }}>{member.name}</h3>
+                    <p style={{ fontSize: '0.85rem', fontFamily: 'var(--font-sans)', color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, marginBottom: '20px' }}>{member.role}</p>
                     <a 
                       href="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=fb9771b2-5459-11e9-89e4-96d3108deae4" 
                       target="_blank"

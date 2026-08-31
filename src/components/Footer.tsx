@@ -55,7 +55,7 @@ export default function Footer() {
               backgroundColor: 'var(--bg-card)'
             }}
           >
-            <span>📍 <strong>Adresse:</strong> Dronningens gt. 15, 0152 Oslo, Norway</span>
+            <span><strong>Adresse:</strong> Dronningens gt. 15, 0152 Oslo, Norway</span>
           </div>
         </ScrollReveal>
 

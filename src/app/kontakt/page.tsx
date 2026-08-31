@@ -24,7 +24,7 @@ export default function Kontakt() {
             <span className="overline" style={{ display: 'block', marginBottom: '12px', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 700 }}>
               Kontakt oss
             </span>
-            <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)' }}>
+            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
               Ta kontakt med Muskelklinikken
             </h1>
             <p style={{ fontSize: '1.15rem', color: 'var(--text-2)', maxWidth: '900px', marginBottom: '60px', lineHeight: 1.7 }}>
@@ -44,18 +44,18 @@ export default function Kontakt() {
                     boxShadow: '0 4px 20px rgba(0,0,0,0.02)' 
                   }}
                 >
-                  <h2 style={{ fontSize: '1.4rem', fontFamily: 'var(--font-serif)', fontWeight: 700, marginBottom: '24px', color: 'var(--text-1)' }}>
+                  <h2 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '24px', color: 'var(--text-1)' }}>
                     Kontaktinformasjon
                   </h2>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '1.05rem', color: 'var(--text-2)' }}>
                     <div>
-                      📍 <strong>Adresse:</strong> Dronningens gt. 15, 0152 Oslo, Norway
+                      <strong>Adresse:</strong> Dronningens gt. 15, 0152 Oslo, Norway
                     </div>
                     <div>
-                      📞 <strong>Telefon:</strong> <a href="tel:+4791907760" style={{ textDecoration: 'underline' }}>+47 919 07 760</a>
+                      <strong>Telefon:</strong> <a href="tel:+4791907760" style={{ textDecoration: 'underline' }}>+47 919 07 760</a>
                     </div>
                     <div>
-                      ✉️ <strong>E-post:</strong> <a href="mailto:post@muskelklinikken.no" style={{ textDecoration: 'underline' }}>post@muskelklinikken.no</a>
+                      <strong>E-post:</strong> <a href="mailto:post@muskelklinikken.no" style={{ textDecoration: 'underline' }}>post@muskelklinikken.no</a>
                     </div>
                   </div>
                 </div>
@@ -95,12 +95,12 @@ export default function Kontakt() {
                   boxShadow: '0 4px 20px rgba(0,0,0,0.02)' 
                 }}
               >
-                <h2 style={{ fontSize: '1.4rem', fontFamily: 'var(--font-serif)', fontWeight: 700, marginBottom: '24px', color: 'var(--text-1)' }}>
+                <h2 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '24px', color: 'var(--text-1)' }}>
                   Send oss en melding
                 </h2>
                 {submitted ? (
                   <div style={{ backgroundColor: 'rgba(74, 234, 220, 0.08)', border: '1px solid rgba(74, 234, 220, 0.3)', padding: '24px', borderRadius: '12px', textAlign: 'center' }}>
-                    <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '12px' }}>✉️</span>
+                    <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '12px' }}></span>
                     <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px', color: 'var(--text-1)' }}>Takk for din melding!</h3>
                     <p style={{ fontSize: '0.95rem', color: 'var(--text-2)' }}>Vi har mottatt meldingen din og vil svare deg så fort som mulig.</p>
                   </div>

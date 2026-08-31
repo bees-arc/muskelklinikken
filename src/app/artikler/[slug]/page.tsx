@@ -43,10 +43,10 @@ export default async function ArticlePage({ params }: PageProps) {
             </a>
 
             <span style={{ fontSize: '0.9rem', color: 'var(--text-3)', fontWeight: 600, display: 'block', marginBottom: '12px' }}>
-              📅 {article.date}
+              {article.date}
             </span>
 
-            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.2, marginBottom: '48px', color: 'var(--text-1)' }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '48px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
               {article.title}
             </h1>
 
@@ -67,9 +67,10 @@ export default async function ArticlePage({ params }: PageProps) {
                     <h2 
                       key={idx} 
                       style={{ 
-                        fontSize: '1.6rem', 
-                        fontFamily: 'var(--font-serif)', 
+                        fontSize: '1.4rem', 
+                        fontFamily: 'var(--font-chakra)', 
                         fontWeight: 700, 
+                        textTransform: 'uppercase',
                         marginTop: '40px', 
                         marginBottom: '20px', 
                         color: 'var(--text-1)' 

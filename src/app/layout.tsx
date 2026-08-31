@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Mulish, Playfair_Display } from 'next/font/google'
+import { Inter, Mulish, Playfair_Display, Chakra_Petch } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -23,6 +23,13 @@ const playfair = Playfair_Display({
   display: 'swap',
 })
 
+const chakraPetch = Chakra_Petch({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-chakra',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   title: 'Muskelklinikken – Holistisk behandling. Forankret i vitenskap.',
   description:
@@ -33,7 +40,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="no" className={`${inter.variable} ${mulish.variable} ${playfair.variable}`}>
+    <html lang="no" className={`${inter.variable} ${mulish.variable} ${playfair.variable} ${chakraPetch.variable}`}>
       <body>{children}</body>
     </html>
   )

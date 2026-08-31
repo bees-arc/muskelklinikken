@@ -11,10 +11,10 @@ export default function Bedriftsavtale() {
             <span className="overline" style={{ display: 'block', marginBottom: '12px', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 700 }}>
               Tjenester
             </span>
-            <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)' }}>
+            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
               Bedriftsavtaler & Trening
             </h1>
-            <p style={{ fontSize: '1.25rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--text-2)', marginBottom: '40px', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '1.15rem', fontFamily: 'var(--font-chakra)', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--text-2)', marginBottom: '40px', lineHeight: 1.5 }}>
               Invester i dine ansattes helse – reduser sykefravær og øk trivsel.
             </p>
 
@@ -28,16 +28,16 @@ export default function Bedriftsavtale() {
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginBottom: '60px' }}>
               <div style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border)', padding: '40px 30px', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
-                <h2 style={{ fontSize: '1.5rem', fontFamily: 'var(--font-serif)', fontWeight: 700, marginBottom: '20px', color: 'var(--text-1)' }}>
+                <h2 style={{ fontSize: '1.35rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '20px', color: 'var(--text-1)' }}>
                   Bedriftstrening
                 </h2>
                 <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--text-2)' }}>
-                  Friske ansatte yter bedre – og trives mer. Vi tilbyr skreddersydd bedriftstrening både på Muskelklinikken, ute hos bedriften eller utendørs. Våre erfarne terapeuter og trenere leder alt fra sirkeltrening, løpegrupper og styrkeøkter, til spesialtilpasset opptrening mot arrangementer som Holmenkollstafetten og Sentrumsløpet. Vi tilbyr også effektive jobbstrekk og mikropauser på arbeidsplassen, som kan bidra til redusert sykefravær og økt energi i arbeidshverdagen. Treningstilbudet er fleksibelt og kan tilpasses ulike grupper, behov og ambisjonsnivå – fra enkle helseøkter til prestasjonsfremmende treningsopplegg. Vi hjelper dere å bygge en aktiv og motiverende bedriftskultur.
+                  Friske ansatte yter bedre – og trives mer. Vi tilbyr skreddersydd bedriftstrening både på Muskelklinikken, ute hos bedriften eller utendørs. Våre erfarne terapeuter og trenere leder alt fra sirkeltrening, løpegrupper og styrkeøkter, til spesialtilpasset opptrening mot arrangementer som Holmenkollstafetten og Sentrumsløpet. Vi tilbyr også effektive jobbstrekk og mikropauser på arbeidsplassen, som kan bidra til redusert sykefravær og økt energi i arbeidshverdagen. Treningstilbudet er fleksibelt og kan tilpassen ulike grupper, behov og ambisjonsnivå – fra enkle helseøkter til prestasjonsfremmende treningsopplegg. Vi hjelper dere å bygge en aktiv og motiverende bedriftskultur.
                 </p>
               </div>
 
               <div style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border)', padding: '40px 30px', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
-                <h2 style={{ fontSize: '1.5rem', fontFamily: 'var(--font-serif)', fontWeight: 700, marginBottom: '20px', color: 'var(--text-1)' }}>
+                <h2 style={{ fontSize: '1.35rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '20px', color: 'var(--text-1)' }}>
                   Bedriftsbehandling
                 </h2>
                 <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--text-2)' }}>
@@ -46,7 +46,7 @@ export default function Bedriftsavtale() {
               </div>
 
               <div style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border)', padding: '40px 30px', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.02)', gridColumn: '1 / -1' }}>
-                <h2 style={{ fontSize: '1.5rem', fontFamily: 'var(--font-serif)', fontWeight: 700, marginBottom: '20px', color: 'var(--text-1)' }}>
+                <h2 style={{ fontSize: '1.35rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '20px', color: 'var(--text-1)' }}>
                   Coaching og mentaltrening
                 </h2>
                 <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--text-2)' }}>

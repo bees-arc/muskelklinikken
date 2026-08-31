@@ -21,14 +21,14 @@ export default function FysikalskBehandling() {
             
             <div style={{ backgroundColor: 'rgba(219, 68, 85, 0.06)', border: '1px solid rgba(219, 68, 85, 0.2)', padding: '16px 24px', borderRadius: '12px', marginBottom: '32px', maxWidth: '900px' }}>
               <p style={{ color: '#db4455', fontWeight: 600, fontSize: '0.95rem', margin: 0 }}>
-                ⚠️ Merk: Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.
+                Merk: Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.
               </p>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)' }}>
-              Fysikalsk behandling hos Muskelklinikken
+            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
+              Fysikalsk Behandling hos Muskelklinikken
             </h1>
-            <p style={{ fontSize: '1.25rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--text-2)', marginBottom: '40px', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '1.15rem', fontFamily: 'var(--font-chakra)', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--text-2)', marginBottom: '40px', lineHeight: 1.5 }}>
               En helhetlig, tverrfaglig og moderne tilnærming til smerte, rehabilitering og bevegelsesglede.
             </p>
 
@@ -40,7 +40,7 @@ export default function FysikalskBehandling() {
               />
             </div>
             
-            <div style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text-2)', maxWidth: '900px', marginBottom: '60px' }}>
+            <div style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text-2)', maxWidth: '900px', marginBottom: '60px', fontFamily: 'var(--font-body)' }}>
               <p style={{ marginBottom: '24px' }}>
                 Vi er stolte av å være eksperter innen vårt felt. Våre terapeuter underviser internasjonalt og holder seg kontinuerlig oppdatert ved å delta på kurs årlig og samarbeide med anerkjente institutter og professorer. Vi tror på evidensbasert kunnskap for å gi deg det absolutt beste resultatet.
               </p>
@@ -53,7 +53,7 @@ export default function FysikalskBehandling() {
             </div>
             
             <div style={{ borderTop: '1px solid var(--border)', paddingTop: '60px', marginBottom: '60px' }}>
-              <h2 style={{ fontSize: '2.2rem', fontFamily: 'var(--font-serif)', marginBottom: '40px', color: 'var(--text-1)' }}>Våre fagområder</h2>
+              <h2 style={{ fontSize: '2rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '40px', color: 'var(--text-1)' }}>Våre fagområder</h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
                 {SPECIALTIES.map((spec) => (
                   <div 
@@ -66,8 +66,8 @@ export default function FysikalskBehandling() {
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   >
-                    <h3 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-serif)', fontWeight: 700, marginBottom: '12px', color: 'var(--text-1)' }}>{spec.title}</h3>
-                    <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--text-2)' }}>{spec.desc}</p>
+                    <h3 style={{ fontSize: '1.2rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '12px', color: 'var(--text-1)' }}>{spec.title}</h3>
+                    <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--text-2)', fontFamily: 'var(--font-body)' }}>{spec.desc}</p>
                   </div>
                 ))}
               </div>

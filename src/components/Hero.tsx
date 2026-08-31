@@ -31,7 +31,7 @@ export default function Hero() {
           </p>
 
           <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', marginBottom: '40px', fontWeight: 600 }}>
-            ⚠️ Merk: Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.
+            Merk: Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.
           </p>
 
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>

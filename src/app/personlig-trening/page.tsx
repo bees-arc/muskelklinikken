@@ -21,14 +21,14 @@ export default function PersonligTrening() {
             
             <div style={{ backgroundColor: 'rgba(219, 68, 85, 0.06)', border: '1px solid rgba(219, 68, 85, 0.2)', padding: '16px 24px', borderRadius: '12px', marginBottom: '32px', maxWidth: '900px' }}>
               <p style={{ color: '#db4455', fontWeight: 600, fontSize: '0.95rem', margin: 0 }}>
-                ⚠️ Merk: Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.
+                Merk: Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.
               </p>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)' }}>
+            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
               Personlig trening hos Muskelklinikken
             </h1>
-            <p style={{ fontSize: '1.25rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--text-2)', marginBottom: '40px', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '1.15rem', fontFamily: 'var(--font-chakra)', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--text-2)', marginBottom: '40px', lineHeight: 1.5 }}>
               Skreddersydd trening tilpasset din kropp, dine mål og din hverdag.
             </p>
 
@@ -53,7 +53,7 @@ export default function PersonligTrening() {
             </div>
             
             <div style={{ borderTop: '1px solid var(--border)', paddingTop: '60px' }}>
-              <h2 style={{ fontSize: '2.2rem', fontFamily: 'var(--font-serif)', marginBottom: '32px', color: 'var(--text-1)' }}>Våre Trenere & Coacher</h2>
+              <h2 style={{ fontSize: '2rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '32px', color: 'var(--text-1)' }}>Våre Trenere & Coacher</h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '30px', marginBottom: '60px' }}>
                 {COACHES.map((coach) => (
                   <div 
@@ -71,9 +71,9 @@ export default function PersonligTrening() {
                     }}
                   >
                     <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'var(--bg-surface)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.2rem', marginBottom: '20px' }}>
-                      🏋️
+                      
                     </div>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '6px', color: 'var(--text-1)' }}>{coach.name}</h3>
+                    <h3 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '6px', color: 'var(--text-1)' }}>{coach.name}</h3>
                     <p style={{ fontSize: '0.85rem', color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, marginBottom: coach.note ? '10px' : '20px' }}>{coach.role}</p>
                     {coach.note && (
                       <span style={{ fontSize: '0.8rem', color: '#db4455', fontWeight: 600, backgroundColor: 'rgba(219,68,85,0.08)', padding: '4px 12px', borderRadius: '100px', marginBottom: '20px' }}>

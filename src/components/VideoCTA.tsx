@@ -76,7 +76,7 @@ export default function VideoCTA() {
           </div>
 
           <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', marginBottom: '20px', fontWeight: 600 }}>
-            ⚠️ Merk: Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.
+            Merk: Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.
           </p>
 
           <a
