@@ -31,9 +31,9 @@ export default function OmOss() {
               Velkommen til Muskelklinikken – ditt kompetansesenter for helse og velvære!
             </p>
 
-            <div style={{ width: '100%', height: '400px', borderRadius: '24px', overflow: 'hidden', marginBottom: '50px', border: '1px solid var(--border)' }}>
+            <div style={{ width: '100%', height: '440px', borderRadius: '24px', overflow: 'hidden', marginBottom: '50px', border: '1px solid var(--border)' }}>
               <img 
-                src="/images/om_oss_coffee_banner.jpg" 
+                src="/images/om_oss_lounge_banner.jpg" 
                 alt="Muskelklinikken Lounge" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
               />

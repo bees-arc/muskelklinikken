@@ -71,45 +71,61 @@ export default function Priser() {
       <main style={{ paddingTop: '100px', minHeight: '80vh', backgroundColor: 'var(--bg)' }}>
         <section style={{ paddingBlock: '80px' }}>
           <div className="container">
-            <span className="overline" style={{ display: 'block', marginBottom: '12px', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 700 }}>
-              Prisliste
-            </span>
-            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
-              Våre priser
-            </h1>
-            <p style={{ fontSize: '1.15rem', color: 'var(--text-2)', maxWidth: '800px', marginBottom: '60px', lineHeight: 1.6 }}>
-              Vi tilbyr tverrfaglige helsetjenester tilpasset dine behov. Nedenfor finner du oversikt over priser for undersøkelser, behandlinger, testing og personlig oppfølging.
-            </p>
+            <div style={{ textAlign: 'center', maxWidth: '820px', marginInline: 'auto', marginBottom: '60px' }}>
+              <span className="overline" style={{ display: 'block', marginBottom: '12px', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 700 }}>
+                Prisliste
+              </span>
+              <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.6rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
+                Våre priser
+              </h1>
+              <p style={{ fontSize: '1.15rem', color: 'var(--text-2)', lineHeight: 1.6, marginInline: 'auto' }}>
+                Vi tilbyr tverrfaglige helsetjenester tilpasset dine behov. Nedenfor finner du oversikt over priser for undersøkelser, behandlinger, testing og personlig oppfølging.
+              </p>
+            </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '48px', maxWidth: '900px', marginBottom: '60px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '36px', maxWidth: '1050px', marginInline: 'auto', width: '100%', marginBottom: '60px' }}>
               {PRICE_CATEGORIES.map((category) => (
                 <div 
                   key={category.title} 
                   style={{ 
                     backgroundColor: 'var(--bg-card)', 
                     border: '1px solid var(--border)', 
-                    borderRadius: '16px', 
-                    padding: '36px', 
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.02)' 
+                    borderRadius: '20px', 
+                    padding: '40px 48px', 
+                    boxShadow: '0 4px 24px rgba(0,0,0,0.02)' 
                   }}
                 >
-                  <h2 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '6px', color: 'var(--text-1)' }}>
-                    {category.title}
-                  </h2>
-                  {category.description && (
-                    <p style={{ fontSize: '0.9rem', color: 'var(--text-3)', fontStyle: 'italic', marginBottom: '20px' }}>
-                      {category.description}
-                    </p>
-                  )}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: category.description ? '0px' : '20px' }}>
+                  <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', borderBottom: '1px solid var(--border)', paddingBottom: '16px', marginBottom: '24px' }}>
+                    <h2 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-1)', margin: 0 }}>
+                      {category.title}
+                    </h2>
+                    {category.description && (
+                      <span style={{ fontSize: '0.88rem', color: 'var(--text-3)', fontStyle: 'italic' }}>
+                        {category.description}
+                      </span>
+                    )}
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                     {category.items.map((item) => (
-                      <div key={item.name} style={{ borderBottom: '1px solid rgba(0,0,0,0.04)', paddingBottom: '16px' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '20px', alignItems: 'baseline' }}>
-                          <span style={{ fontWeight: 600, color: 'var(--text-1)', fontSize: '1.05rem' }}>{item.name}</span>
-                          <span style={{ fontWeight: 700, color: 'var(--text-1)', fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{item.price}</span>
+                      <div key={item.name} style={{ borderBottom: '1px solid rgba(0,0,0,0.05)', paddingBottom: '16px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', alignItems: 'baseline' }}>
+                          <span style={{ fontWeight: 600, color: 'var(--text-1)', fontSize: '1.08rem' }}>{item.name}</span>
+                          <span style={{ 
+                            fontWeight: 700, 
+                            fontFamily: 'var(--font-chakra)', 
+                            color: 'var(--text-1)', 
+                            fontSize: '1.15rem', 
+                            whiteSpace: 'nowrap',
+                            backgroundColor: 'var(--bg-surface)',
+                            padding: '6px 14px',
+                            borderRadius: '8px',
+                            border: '1px solid var(--border)'
+                          }}>
+                            {item.price}
+                          </span>
                         </div>
                         {item.desc && (
-                          <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', marginTop: '6px', lineHeight: 1.5 }}>
+                          <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', marginTop: '8px', lineHeight: 1.6, maxWidth: '850px' }}>
                             {item.desc}
                           </p>
                         )}
@@ -123,12 +139,12 @@ export default function Priser() {
                 style={{ 
                   backgroundColor: 'var(--bg-surface)', 
                   border: '1px solid var(--border)', 
-                  borderRadius: '16px', 
-                  padding: '36px', 
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.02)' 
+                  borderRadius: '20px', 
+                  padding: '40px 48px', 
+                  boxShadow: '0 4px 24px rgba(0,0,0,0.02)' 
                 }}
               >
-                <h2 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '16px', color: 'var(--text-1)' }}>
+                <h2 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '16px', color: 'var(--text-1)' }}>
                   Personlig trening & Mental coaching
                 </h2>
                 <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--text-2)', marginBottom: '20px' }}>
@@ -143,7 +159,7 @@ export default function Priser() {
               </div>
             </div>
 
-            <div style={{ borderTop: '1px solid var(--border)', paddingTop: '40px', maxWidth: '900px' }}>
+            <div style={{ borderTop: '1px solid var(--border)', paddingTop: '40px', maxWidth: '1050px', marginInline: 'auto' }}>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-2)', lineHeight: 1.6 }}>
                 💡 <strong>Helseforsikring:</strong> Vi samarbeider tett med de fleste store forsikringsselskapene (If, Storebrand, Gjensidige, Vertikal Helse, Falck). Har du godkjent helseforsikring, kan du få behandlingene dine dekket helt eller delvis. Vennligst ha godkjenningsnummeret ditt klart ved bestilling.
               </p>
