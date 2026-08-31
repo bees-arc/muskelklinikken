@@ -28,9 +28,6 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="nav-center" aria-label="Hovedmeny">
           <a href="/om-oss" className="nav-link">Om oss</a>
-          <a href="https://coachcamacho.com/en/" target="_blank" rel="noopener noreferrer" className="nav-link">Coaching</a>
-          <a href="/artikler" className="nav-link">Fagstoff</a>
-          <a href="/priser" className="nav-link">Priser</a>
           <div className="nav-dropdown-group">
             <span className="nav-link dropdown-toggle" style={{ cursor: 'pointer' }}>Tjenester ▾</span>
             <div className="nav-dropdown">
@@ -38,8 +35,11 @@ export default function Header() {
               <a href="/bedriftsavtale" className="dropdown-link">Bedriftsavtale</a>
               <a href="/personlig-trening" className="dropdown-link">Personlig trening</a>
               <a href="/fysikalske-behandling" className="dropdown-link">Fysikalske behandling</a>
+              <a href="https://coachcamacho.com/en/" target="_blank" rel="noopener noreferrer" className="dropdown-link">Coaching</a>
             </div>
           </div>
+          <a href="/priser" className="nav-link">Priser</a>
+          <a href="/artikler" className="nav-link">Artikler</a>
           <a href="/kontakt" className="nav-link">Kontakt</a>
         </nav>
 
@@ -79,9 +79,6 @@ export default function Header() {
         <div className={`mobile-nav-overlay ${mobileOpen ? 'open' : ''}`}>
           <nav className="mobile-nav-menu">
             <a href="/om-oss" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Om oss</a>
-            <a href="https://coachcamacho.com/en/" target="_blank" rel="noopener noreferrer" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Coaching</a>
-            <a href="/artikler" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Fagstoff</a>
-            <a href="/priser" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Priser</a>
             
             <div className="mobile-nav-submenu-title">Tjenester</div>
             <div className="mobile-nav-submenu">
@@ -89,8 +86,11 @@ export default function Header() {
               <a href="/bedriftsavtale" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Bedriftsavtale</a>
               <a href="/personlig-trening" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Personlig trening</a>
               <a href="/fysikalske-behandling" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Fysikalske behandling</a>
+              <a href="https://coachcamacho.com/en/" target="_blank" rel="noopener noreferrer" className="mobile-sub-link" onClick={() => setMobileOpen(false)}>Coaching</a>
             </div>
 
+            <a href="/priser" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Priser</a>
+            <a href="/artikler" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Artikler</a>
             <a href="/kontakt" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Kontakt</a>
             
             <div className="mobile-nav-buttons">

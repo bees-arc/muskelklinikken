@@ -23,15 +23,19 @@ export default function OmOss() {
             <span className="overline" style={{ display: 'block', marginBottom: '12px', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 700 }}>
               Om oss
             </span>
-            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '40px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
+            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
               Muskelklinikken – Tverrfaglig helsesenter for behandling, trening og varig endring
             </h1>
 
+            <p style={{ fontSize: '1.15rem', fontFamily: 'var(--font-chakra)', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--text-2)', marginBottom: '40px', lineHeight: 1.5 }}>
+              Velkommen til Muskelklinikken – ditt kompetansesenter for helse og velvære!
+            </p>
+
             <div style={{ width: '100%', height: '400px', borderRadius: '24px', overflow: 'hidden', marginBottom: '50px', border: '1px solid var(--border)' }}>
               <img 
-                src="https://muskelklinikken.no/wp-content/uploads/2023/12/Rectangle-154.webp" 
-                alt="Muskelklinikken Team" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.8) contrast(1.05) brightness(0.95)' }} 
+                src="/images/om_oss_coffee_banner.jpg" 
+                alt="Muskelklinikken Lounge" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
               />
             </div>
             

@@ -24,7 +24,7 @@
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 
-  --font-sans:   var(--font-inter), system-ui, sans-serif;
+  --font-sans:   var(--font-chakra), system-ui, sans-serif;
   --font-body:   var(--font-mulish), sans-serif;
   --font-serif:  var(--font-playfair), Georgia, serif;
 }
@@ -1046,6 +1046,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: color 0.2s;
 }
 .footer-social a:hover { color: var(--text-1); }
+.footer-quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+}
+.footer-quick-links a {
+  color: var(--text-2);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-quick-links a:hover {
+  color: var(--text-1);
+}
 @media (max-width: 640px) {
   .footer-bar { flex-direction: column; gap: 20px; }
   .footer-heading { font-size: 2.6rem; }

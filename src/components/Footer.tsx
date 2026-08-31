@@ -61,12 +61,20 @@ export default function Footer() {
 
 
 
+        {/* Quick Links */}
+        <div className="footer-quick-links">
+          <a href="/">Hjem</a>
+          <a href="/om-oss">Om oss</a>
+          <a href="/artikler">Fagstoff</a>
+          <a href="/kontakt">Kontakt</a>
+        </div>
+
         <div className="footer-bar">
           <p className="footer-copy">
             &copy; {new Date().getFullYear()} Muskelklinikken | <a href="#" style={{ textDecoration: 'underline' }}>Personvernerklæring</a>
           </p>
           <p className="footer-copy" style={{ fontSize: '0.78rem' }}>
-            Design og utvikling inspirert av TheWeb
+            Design og utvikling av <a href="https://theweb.no" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>TheWeb</a>
           </p>
           <nav className="footer-social" aria-label="Sosiale medier">
             <a href="#" aria-label="Facebook">Facebook</a>
