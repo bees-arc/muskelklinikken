@@ -31,6 +31,14 @@ export default function PersonligTrening() {
             <p style={{ fontSize: '1.25rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--text-2)', marginBottom: '40px', lineHeight: 1.5 }}>
               Skreddersydd trening tilpasset din kropp, dine mål og din hverdag.
             </p>
+
+            <div style={{ width: '100%', height: '350px', borderRadius: '24px', overflow: 'hidden', marginBottom: '50px', border: '1px solid var(--border)' }}>
+              <img 
+                src="https://muskelklinikken.no/wp-content/uploads/2023/12/Rectangle-160.webp" 
+                alt="Personlig trening hos Muskelklinikken" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+              />
+            </div>
             
             <div style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text-2)', maxWidth: '900px', marginBottom: '60px' }}>
               <p style={{ marginBottom: '24px' }}>

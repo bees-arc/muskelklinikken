@@ -50,6 +50,16 @@ export default async function ArticlePage({ params }: PageProps) {
               {article.title}
             </h1>
 
+            {article.image && (
+              <div style={{ width: '100%', height: '400px', borderRadius: '24px', overflow: 'hidden', marginBottom: '48px', border: '1px solid var(--border)' }}>
+                <img 
+                  src={article.image} 
+                  alt={article.title} 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                />
+              </div>
+            )}
+
             <div style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text-2)' }}>
               {article.paragraphs.map((p, idx) => {
                 if (p.startsWith('## ')) {

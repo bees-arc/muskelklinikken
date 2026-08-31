@@ -31,6 +31,14 @@ export default function FysikalskBehandling() {
             <p style={{ fontSize: '1.25rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--text-2)', marginBottom: '40px', lineHeight: 1.5 }}>
               En helhetlig, tverrfaglig og moderne tilnærming til smerte, rehabilitering og bevegelsesglede.
             </p>
+
+            <div style={{ width: '100%', height: '350px', borderRadius: '24px', overflow: 'hidden', marginBottom: '50px', border: '1px solid var(--border)' }}>
+              <img 
+                src="/images/service_physical.webp" 
+                alt="Fysikalsk behandling hos Muskelklinikken" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+              />
+            </div>
             
             <div style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text-2)', maxWidth: '900px', marginBottom: '60px' }}>
               <p style={{ marginBottom: '24px' }}>

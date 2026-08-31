@@ -3,6 +3,7 @@ export interface Article {
   title: string
   date: string
   excerpt: string
+  image: string
   paragraphs: string[]
 }
 
@@ -12,6 +13,7 @@ export const ARTICLES: Article[] = [
     "title": "Oppfølging av kolleger",
     "date": "October 9, 2025",
     "excerpt": "Sykefravær relatert til jobb / Retur til jobb etter fravær...",
+    "image": "https://muskelklinikken.no/wp-content/uploads/2025/10/office-scaled.webp",
     "paragraphs": [
       "Ultralyddiagnostikk",
       "bedriftsavtale",
@@ -42,6 +44,7 @@ export const ARTICLES: Article[] = [
     "title": "Holdning og smerte i nakke og skuldre",
     "date": "December 24, 2023",
     "excerpt": "Moderne livsstil, preget av lange timer foran dataskjermer og økende avhengighet av teknologiske enheter, har ført til en økning i problemer knyttet til nakke- ...",
+    "image": "https://muskelklinikken.no/wp-content/uploads/2023/12/Blog-Image-1.webp",
     "paragraphs": [
       "Holdning og smerte i nakke og skuldre",
       "Moderne livsstil, preget av lange timer foran dataskjermer og økende avhengighet av teknologiske enheter, har ført til en økning i problemer knyttet til nakke- og skuldersmerter. I noen tilfeller kan disse plagene være direkte knyttet til holdningen vår. Derfor vil vi i Muskelklinikken belyse sammenhengen mellom holdning og smerte i nakke og skuldre.",
@@ -72,6 +75,7 @@ export const ARTICLES: Article[] = [
     "title": "Korsryggssmerter og utfordringen med MR bilder",
     "date": "November 7, 2023",
     "excerpt": "Magnetisk resonanstomografi (MR) har blitt en verdifull diagnostisk metode for korsryggssmerter, men det er viktig å erkjenne at MR-resultatene ikke alltid gir ...",
+    "image": "https://muskelklinikken.no/wp-content/uploads/2023/12/Blog-Image-3.webp",
     "paragraphs": [
       "Korsryggssmerter og utfordringen med MR bilder.",
       "Innledning:",
@@ -96,6 +100,7 @@ export const ARTICLES: Article[] = [
     "title": "Trening med smerter for å lindre smerter: En ny tilnærming til skulderrehabilitering",
     "date": "October 2, 2023",
     "excerpt": "Smertefull trening er et varmt debattområde innen fysioterapi og pasientpleie, spesielt med hensyn til kroniske smerter knyttet til rotator mansjetten. Selv om ...",
+    "image": "https://muskelklinikken.no/wp-content/uploads/2023/12/Blog-Image-4.webp",
     "paragraphs": [
       "Trening med smerter for å lindre smerter:En ny tilnærming til skulderrehabilitering",
       "Skrevet av Finn-Tore",
@@ -119,6 +124,7 @@ export const ARTICLES: Article[] = [
     "title": "Smerter mellom skulderbladene: Rhomboide muskelplager – Hva er det og hvordan kan vi behandle det?",
     "date": "September 9, 2023",
     "excerpt": "Hvis du jobber som terapeut innen muskel- og skjelettsystemet, er det stor sannsynlighet for at du daglig vil se minst én pasient som lider av smerter mellom sk...",
+    "image": "https://muskelklinikken.no/wp-content/uploads/2023/12/Blog-Image-5.webp",
     "paragraphs": [
       "Smerter mellom skulderbladene: Rhomboide muskelplager – Hva er det og hvordan kan vi behandle det?",
       "Skrevet av: Finn-Tore",
@@ -147,6 +153,7 @@ export const ARTICLES: Article[] = [
     "title": "Øvelsesanbefalinger for idrettsutøvere med skulderskade: En omfattende vurdering",
     "date": "August 14, 2023",
     "excerpt": "Skader er en del av idrett, og dette er spesielt gjeldende for idrettsutøvere som utøver aktiviteter over hodet, hvor opptil 30% opplever skulderskader i løpet ...",
+    "image": "https://muskelklinikken.no/wp-content/uploads/2023/12/Blog-Image-6.webp",
     "paragraphs": [
       "Øvelsesanbefalinger for idrettsutøvere med skulderskade: En omfattende vurdering",
       "Skrevet av Finn-Tore",

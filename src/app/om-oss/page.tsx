@@ -26,6 +26,14 @@ export default function OmOss() {
             <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontFamily: 'var(--font-serif)', fontWeight: 700, lineHeight: 1.15, marginBottom: '40px', color: 'var(--text-1)' }}>
               Muskelklinikken – Tverrfaglig helsesenter for behandling, trening og varig endring
             </h1>
+
+            <div style={{ width: '100%', height: '400px', borderRadius: '24px', overflow: 'hidden', marginBottom: '50px', border: '1px solid var(--border)' }}>
+              <img 
+                src="https://muskelklinikken.no/wp-content/uploads/2023/12/Rectangle-154.webp" 
+                alt="Muskelklinikken Team" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+              />
+            </div>
             
             <div style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text-2)', maxWidth: '900px', marginBottom: '80px' }}>
               <p style={{ marginBottom: '24px' }}>
