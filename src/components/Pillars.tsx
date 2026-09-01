@@ -6,14 +6,14 @@ const PILLARS = [
   {
     id: 'fysikalsk',
     tag: 'Tverrfaglig Behandling',
-    title: 'Fysikalsk Behandling & Manuellterapi',
+    title: 'Fysikalsk Behandling',
     tagline: 'Gjenopprett funksjon og lev smertefritt',
-    desc: 'Våre autoriserte terapeuter har spesialisering innen osteopati, fysioterapi, manuellterapi og idrettsskader. Vi identifiserer årsaken til smerten og behandler muskler, ledd og bindevev med dokumenterte metoder.',
+    desc: 'Våre autoriserte terapeuter har bred spesialisering innen osteopati, fysioterapi, manuellterapi og idrettsskader. Vi identifiserer årsaken til smerten og behandler muskler, ledd og bindevev med dokumenterte metoder.',
     features: [
-      'Leddmobilisering og manipulering',
+      'Leddmobilisering og manipulasjonsbehandling',
       'Trykkbølgebehandling (ESWT)',
       'Medisinsk akupunktur & dry needling',
-      'Spesialisert rehabilitering for idrettsutøvere',
+      'Målrettet rehabilitering for idrettsutøvere',
     ],
     link: '/fysikalske-behandling',
     linkText: 'Les om fysikalsk behandling →',
@@ -22,14 +22,14 @@ const PILLARS = [
   {
     id: 'ultralyd',
     tag: 'Avansert Diagnostikk',
-    title: 'Ultralyddiagnostikk & PRP Injeksjonsterapi',
+    title: 'Ultralyddiagnostikk',
     tagline: 'Presis veiledning og regenerativ medisin',
-    desc: 'Med moderne ultralydteknologi kan vi undersøke sener, leddbånd, muskler og slimposer i sanntid under bevegelse. I samarbeid med vår legespesialist tilbyr vi ultralydveiledet PRP (Platelet-Rich Plasma) og proloterapi.',
+    desc: 'Med moderne ultralydteknologi kan vi undersøke sener, leddbånd, muskler og slimposer i sanntid under bevegelse. I samråd med legespesialist tilbyr vi ultralydveiledet PRP-injeksjonsterapi og proloterapi.',
     features: [
       'Sanntids dynamisk vevsundersøkelse',
-      'PRP (blodplateberiket plasma)',
-      'Proloterapi og målrettede injeksjoner',
-      'Kort ventetid for bildeundersøkelse',
+      'PRP (blodplateberiket plasma) & proloterapi',
+      'Presis ultralydveiledet injeksjonsterapi',
+      'Rask tilgang uten behov for legehenvisning',
     ],
     link: '/ultralyddiagnostikk',
     linkText: 'Utforsk ultralyddiagnostikk →',
@@ -38,13 +38,13 @@ const PILLARS = [
   {
     id: 'pt',
     tag: 'Skreddersydd Trening',
-    title: 'Personlig Trening & Rehabilitering',
+    title: 'Personlig Trening',
     tagline: 'Bygg en robust kropp som tåler hverdagen',
-    desc: 'Vi tilbyr skreddersydde PT-pakker for alle nivåer – fra toppidrettsutøvere til travle hverdagshelter. Våre trenere er utdannet innen idrettsvitenskap og biomekanikk, og sikrer trygg progresjon mot dine mål.',
+    desc: 'Vi tilbyr skreddersydde PT-pakker for alle nivåer – fra toppidrettsutøvere til deg som vil komme i form. Våre trenere har høy kompetanse innen idrettsvitenskap og biomekanikk, og sikrer trygg og målrettet progresjon.',
     features: [
       '1-til-1 oppfølging i private treningsfasiliteter',
-      'Individuell biomekanisk screening',
-      'Målrettet styrke- og stabilitetsopptrening',
+      'Individuell biomekanisk screening og test',
+      'Målrettet styrke-, stabilitets- og mobilitetstrening',
       'Kondisjons- og skadeforebyggende programmer',
     ],
     link: '/personlig-trening',
@@ -53,19 +53,35 @@ const PILLARS = [
   },
   {
     id: 'bedrift',
-    tag: 'Forebyggende Helse',
-    title: 'Bedriftshelse & Coaching',
+    tag: 'Forebyggende Bedriftshelse',
+    title: 'Bedriftstrening & Avtaler',
     tagline: 'Invester i friske, motiverte og produktive ansatte',
-    desc: 'Våre bedriftsavtaler kombinerer forebyggende trening, ergonomisk rådgivning, stressmestring og helhetlig livsstilscoaching. Reduser sykefravær og skap et energisk arbeidsmiljø.',
+    desc: 'Våre bedriftsavtaler kombinerer forebyggende trening, ergonomisk rådgivning, helseprofiler og fysikalsk behandling på eller utenfor arbeidsplassen. Reduser sykefravær og skap et energisk arbeidsmiljø.',
     features: [
       'Ergonomisk kartlegging på arbeidsplassen',
-      'Felles treningsøkter og workshops',
+      'Felles treningsøkter, gruppetimer og workshops',
       'Prioritert tilgang til behandling for ansatte',
-      'Coaching innen søvn, kosthold og restitusjon',
+      'Helseprofiler og systematisk oppfølging',
     ],
     link: '/bedriftsavtale',
     linkText: 'Les om bedriftsavtaler →',
     image: '/images/service_bedrift.webp',
+  },
+  {
+    id: 'coaching',
+    tag: 'Livsstil & Prestasjon',
+    title: 'Coaching & Mental Trening',
+    tagline: 'Helhetlig veiledning for kropp, sinn og prestasjon',
+    desc: 'I samarbeid med Coach Camacho tilbyr vi profesjonell livsstilscoaching, mental trening, stressmestring og ernæringsoptimalisering for å gi deg verktøyene du trenger for en sunn og balansert livsstil.',
+    features: [
+      '1-til-1 mental coaching og prestasjonsveiledning',
+      'Mestring av stress og hverdagsbelastning',
+      'Optimalisering av søvn, kosthold og restitusjon',
+      'Tett, personlig oppfølging mot dine livsmål',
+    ],
+    link: 'https://coachcamacho.com/en/',
+    linkText: 'Besøk Coach Camacho ↗',
+    image: '/images/service_coaching.webp',
   },
 ]
 
@@ -73,12 +89,12 @@ export default function Pillars() {
   return (
     <section className="pillars-showcase-section" id="tjenester">
       <div className="container">
-        {/* Section Header with Right CTA (Fountain Life style) */}
+        {/* Section Header with Right CTA */}
         <div className="pillars-head-flex">
           <ScrollReveal>
             <span className="section-tag-cyan">Våre Kjerneområder</span>
             <h2 className="section-title-large">
-              Undersøk. Behandle. <em className="accent-serif">Styrk.</em>
+              Våre 5 spesialiserte <em className="accent-serif">tjenesteområder</em>
             </h2>
           </ScrollReveal>
 
@@ -94,10 +110,10 @@ export default function Pillars() {
           </ScrollReveal>
         </div>
 
-        {/* 4 Rich Pillar Cards Grid */}
+        {/* 5 Rich Pillar Cards Grid */}
         <div className="pillars-cards-grid">
           {PILLARS.map((p, idx) => (
-            <ScrollReveal key={p.id} delay={idx * 80}>
+            <ScrollReveal key={p.id} delay={idx * 70}>
               <div className="pillar-detail-card">
                 {/* Top Image Banner */}
                 <div className="pillar-card-image-wrap">
@@ -130,7 +146,12 @@ export default function Pillars() {
 
                   {/* Card Bottom Link */}
                   <div className="pillar-card-footer">
-                    <a href={p.link} className="pillar-link-btn">
+                    <a
+                      href={p.link}
+                      target={p.link.startsWith('http') ? '_blank' : '_self'}
+                      rel={p.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="pillar-link-btn"
+                    >
                       {p.linkText}
                     </a>
                   </div>
