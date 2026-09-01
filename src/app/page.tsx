@@ -2,7 +2,6 @@ import AnnouncementBar from '@/components/AnnouncementBar'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
-import HowItWorks from '@/components/HowItWorks'
 import Testimonials from '@/components/Testimonials'
 import InsuranceAccreditation from '@/components/InsuranceAccreditation'
 import Pillars from '@/components/Pillars'
@@ -21,7 +20,6 @@ export default function Home() {
       <main className="main-content-layout">
         <Hero />
         <About />
-        <HowItWorks />
         <Testimonials />
         <InsuranceAccreditation />
         <Pillars />

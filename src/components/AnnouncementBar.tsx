@@ -4,19 +4,9 @@ import { useState, useEffect } from 'react'
 
 const ANNOUNCEMENTS = [
   {
-    text: 'Nyhet: Avansert ultralyddiagnostikk og injeksjonsterapi tilgjengelig',
-    link: '/ultralyddiagnostikk',
-    badge: 'Diagnostikk',
-  },
-  {
     text: 'Få behandlingen dekket av din helseforsikring – Ingen henvisning nødvendig',
     link: '#forsikring',
     badge: 'Forsikring',
-  },
-  {
-    text: 'Bedriftsavtaler: Skreddersydde helse- og treningsprogrammer for bedrifter',
-    link: '/bedriftsavtale',
-    badge: 'Bedrift',
   },
 ]
 
@@ -25,6 +15,8 @@ export default function AnnouncementBar() {
   const [fade, setFade] = useState(true)
 
   useEffect(() => {
+    if (ANNOUNCEMENTS.length <= 1) return
+
     const timer = setInterval(() => {
       setFade(false)
       setTimeout(() => {
@@ -36,16 +28,18 @@ export default function AnnouncementBar() {
     return () => clearInterval(timer)
   }, [])
 
-  const current = ANNOUNCEMENTS[currentIndex]
+  const current = ANNOUNCEMENTS[currentIndex % ANNOUNCEMENTS.length] || ANNOUNCEMENTS[0]
+
+  if (!current) return null
 
   return (
     <div className="announcement-bar">
       <div className="announcement-inner">
         <a
-          href={current.link}
+          href={current.link || '#'}
           className={`announcement-link ${fade ? 'fade-in' : 'fade-out'}`}
         >
-          <span className="announcement-badge">{current.badge}</span>
+          {current.badge && <span className="announcement-badge">{current.badge}</span>}
           <span className="announcement-text">{current.text}</span>
           <span className="announcement-arrow" aria-hidden="true">→</span>
         </a>

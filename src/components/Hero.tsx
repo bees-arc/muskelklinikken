@@ -76,10 +76,10 @@ export default function Hero() {
                   Book behandling
                 </a>
                 <a
-                  href="#prosess"
+                  href="#tjenester"
                   className="btn-hero-glass"
                 >
-                  Slik jobber vi
+                  Våre tjenester
                 </a>
                 <a
                   href="tel:+4791907760"
