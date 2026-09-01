@@ -1,60 +1,139 @@
+'use client'
+
 import ScrollReveal from './ScrollReveal'
 
 const PILLARS = [
   {
-    bg: '/images/service_physical.webp',
-    name: 'FYSIKALSK BEHANDLING',
-    desc: 'Helhetlig rehabilitering og manuell behandling av muskel- og leddplager utført av erfarne terapeuter med fokus på evidensbaserte metoder.',
+    id: 'fysikalsk',
+    tag: 'Tverrfaglig Behandling',
+    title: 'Fysikalsk Behandling & Manuellterapi',
+    tagline: 'Gjenopprett funksjon og lev smertefritt',
+    desc: 'Våre autoriserte terapeuter har spesialisering innen osteopati, fysioterapi, manuellterapi og idrettsskader. Vi identifiserer årsaken til smerten og behandler muskler, ledd og bindevev med dokumenterte metoder.',
+    features: [
+      'Leddmobilisering og manipulering',
+      'Trykkbølgebehandling (ESWT)',
+      'Medisinsk akupunktur & dry needling',
+      'Spesialisert rehabilitering for idrettsutøvere',
+    ],
+    link: '/fysikalske-behandling',
+    linkText: 'Les om fysikalsk behandling →',
+    image: '/images/service_physical.webp',
   },
   {
-    bg: '/images/service_pt.webp',
-    name: 'PERSONLIG TRENING',
-    desc: 'Skreddersydde treningsprogrammer tilpasset din funksjon, ditt nivå og dine mål – enten det gjelder styrke, vekttap eller rehabilitering.',
+    id: 'ultralyd',
+    tag: 'Avansert Diagnostikk',
+    title: 'Ultralyddiagnostikk & PRP Injeksjonsterapi',
+    tagline: 'Presis veiledning og regenerativ medisin',
+    desc: 'Med moderne ultralydteknologi kan vi undersøke sener, leddbånd, muskler og slimposer i sanntid under bevegelse. I samarbeid med vår legespesialist tilbyr vi ultralydveiledet PRP (Platelet-Rich Plasma) og proloterapi.',
+    features: [
+      'Sanntids dynamisk vevsundersøkelse',
+      'PRP (blodplateberiket plasma)',
+      'Proloterapi og målrettede injeksjoner',
+      'Kort ventetid for bildeundersøkelse',
+    ],
+    link: '/ultralyddiagnostikk',
+    linkText: 'Utforsk ultralyddiagnostikk →',
+    image: '/images/service_injection.png',
   },
   {
-    bg: '/images/service_bedrift.webp',
-    name: 'BEDRIFTSTRENING',
-    desc: 'Forebyggende helsetiltak, trening og ergonomisk veiledning for dine ansatte som reduserer sykefravær og styrker samholdet på arbeidsplassen.',
+    id: 'pt',
+    tag: 'Skreddersydd Trening',
+    title: 'Personlig Trening & Rehabilitering',
+    tagline: 'Bygg en robust kropp som tåler hverdagen',
+    desc: 'Vi tilbyr skreddersydde PT-pakker for alle nivåer – fra toppidrettsutøvere til travle hverdagshelter. Våre trenere er utdannet innen idrettsvitenskap og biomekanikk, og sikrer trygg progresjon mot dine mål.',
+    features: [
+      '1-til-1 oppfølging i private treningsfasiliteter',
+      'Individuell biomekanisk screening',
+      'Målrettet styrke- og stabilitetsopptrening',
+      'Kondisjons- og skadeforebyggende programmer',
+    ],
+    link: '/personlig-trening',
+    linkText: 'Se våre PT-pakker →',
+    image: '/images/service_pt.webp',
   },
   {
-    bg: '/images/service_coaching.webp',
-    name: 'COACHING',
-    desc: 'Veiledning innen ernæring, stressmestring og livsstilsendringer som gir deg verktøyene du trenger for å fungere best mulig i hverdagen.',
+    id: 'bedrift',
+    tag: 'Forebyggende Helse',
+    title: 'Bedriftshelse & Coaching',
+    tagline: 'Invester i friske, motiverte og produktive ansatte',
+    desc: 'Våre bedriftsavtaler kombinerer forebyggende trening, ergonomisk rådgivning, stressmestring og helhetlig livsstilscoaching. Reduser sykefravær og skap et energisk arbeidsmiljø.',
+    features: [
+      'Ergonomisk kartlegging på arbeidsplassen',
+      'Felles treningsøkter og workshops',
+      'Prioritert tilgang til behandling for ansatte',
+      'Coaching innen søvn, kosthold og restitusjon',
+    ],
+    link: '/bedriftsavtale',
+    linkText: 'Les om bedriftsavtaler →',
+    image: '/images/service_bedrift.webp',
   },
 ]
 
 export default function Pillars() {
   return (
-    <section className="pillars-section" id="tjenester">
+    <section className="pillars-showcase-section" id="tjenester">
       <div className="container">
-        <ScrollReveal className="section-intro">
-          <span className="overline">Tjenester</span>
-          <h2 className="section-heading" style={{ marginBottom: '24px' }}>
-            Våre tjenester
-          </h2>
-          <p
-            style={{
-              maxWidth: '760px',
-              fontSize: '1.08rem',
-              lineHeight: 1.65,
-              color: 'var(--text-2)',
-              marginTop: '16px'
-            }}
-          >
-            Vi er stolte av å tilby en rekke tjenester som er skreddersydd for å hjelpe deg å oppnå dine helsemål og bli den beste versjonen av deg selv. Vårt dedikerte team av eksperter innen fysikalsk behandling, personlig trening, bedriftstrening, coaching og mental trening står klare til å veilede deg på reisen mot et bedre og mer smertefritt liv.
-          </p>
-        </ScrollReveal>
+        {/* Section Header with Right CTA (Fountain Life style) */}
+        <div className="pillars-head-flex">
+          <ScrollReveal>
+            <span className="section-tag-cyan">Våre Kjerneområder</span>
+            <h2 className="section-title-large">
+              Undersøk. Behandle. <em className="accent-serif">Styrk.</em>
+            </h2>
+          </ScrollReveal>
 
-        <div className="pillars-grid">
-          {PILLARS.map((pillar, i) => (
-            <ScrollReveal key={pillar.name} delay={i * 80}>
-              <div
-                className="pillar"
-                style={{ backgroundImage: `url('${pillar.bg}')` }}
-              >
-                <div className="pillar-inner">
-                  <h3 className="pillar-name">{pillar.name}</h3>
-                  <p className="pillar-desc">{pillar.desc}</p>
+          <ScrollReveal delay={100}>
+            <a
+              href="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=fb9771b2-5459-11e9-89e4-96d3108deae4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-pill-solid"
+            >
+              Book time hos terapeut
+            </a>
+          </ScrollReveal>
+        </div>
+
+        {/* 4 Rich Pillar Cards Grid */}
+        <div className="pillars-cards-grid">
+          {PILLARS.map((p, idx) => (
+            <ScrollReveal key={p.id} delay={idx * 80}>
+              <div className="pillar-detail-card">
+                {/* Top Image Banner */}
+                <div className="pillar-card-image-wrap">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="pillar-card-image"
+                    loading="lazy"
+                  />
+                  <div className="pillar-card-tag-pill">{p.tag}</div>
+                </div>
+
+                {/* Card Content */}
+                <div className="pillar-card-body">
+                  <h3 className="pillar-card-heading">{p.title}</h3>
+                  <div className="pillar-card-tagline">{p.tagline}</div>
+                  <p className="pillar-card-text">{p.desc}</p>
+
+                  {/* Feature Checkpoints */}
+                  <ul className="pillar-card-features">
+                    {p.features.map((feat, i) => (
+                      <li key={i} className="pillar-feature-item">
+                        <svg className="feature-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Card Bottom Link */}
+                  <div className="pillar-card-footer">
+                    <a href={p.link} className="pillar-link-btn">
+                      {p.linkText}
+                    </a>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

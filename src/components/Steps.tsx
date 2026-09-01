@@ -49,26 +49,33 @@ export default function Steps() {
       }
     })
 
+    let ticking = false
     const onScroll = () => {
-      cards.forEach((card, idx) => {
-        let scale = 1
-        let dimOpacity = 0
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          cards.forEach((card, idx) => {
+            let scale = 1
+            let dimOpacity = 0
 
-        for (let j = idx + 1; j < cards.length; j++) {
-          const nextRect = cards[j].getBoundingClientRect()
-          const vh = window.innerHeight
-          let progress = (vh - nextRect.top) / (vh - STICKY_TOP)
-          progress = Math.max(0, Math.min(1, progress))
-          if (progress > 0) {
-            scale *= 1 - progress * 0.04
-            dimOpacity = Math.max(dimOpacity, progress * 0.38)
-          }
-        }
+            for (let j = idx + 1; j < cards.length; j++) {
+              const nextRect = cards[j].getBoundingClientRect()
+              const vh = window.innerHeight
+              let progress = (vh - nextRect.top) / (vh - STICKY_TOP)
+              progress = Math.max(0, Math.min(1, progress))
+              if (progress > 0) {
+                scale *= 1 - progress * 0.04
+                dimOpacity = Math.max(dimOpacity, progress * 0.38)
+              }
+            }
 
-        card.style.transform = `scale(${scale.toFixed(4)})`
-        const dim = card.querySelector<HTMLElement>('.stack-card-dim')
-        if (dim) dim.style.opacity = String(dimOpacity)
-      })
+            card.style.transform = `scale(${scale.toFixed(4)})`
+            const dim = card.querySelector<HTMLElement>('.stack-card-dim')
+            if (dim) dim.style.opacity = String(dimOpacity)
+          })
+          ticking = false
+        })
+        ticking = true
+      }
     }
 
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -78,43 +85,46 @@ export default function Steps() {
 
   return (
     <section className="steps-section" id="behandlinger">
-      <div className="steps-intro container">
-        <ScrollReveal>
+      <div className="container">
+        <ScrollReveal className="section-intro">
           <span className="overline">Hva vi tilbyr</span>
           <h2 className="section-heading">Spesialiserte behandlingstilbud</h2>
+          <p style={{ maxWidth: '600px', marginInline: 'auto', marginTop: '16px', fontSize: '1.05rem', color: 'var(--text-2)', lineHeight: 1.6 }}>
+            Vi kombinerer grundig diagnostikk, moderne behandlingsmetoder og individuelt tilpasset opptrening for å gi deg best mulig resultat.
+          </p>
         </ScrollReveal>
-      </div>
 
-      <div className="stack-scene" ref={cardsRef}>
-        {CARDS.map((card) => (
-          <div
-            key={card.id}
-            id={card.id}
-            className="stack-card"
-          >
+        <div className="stack-scene" ref={cardsRef}>
+          {CARDS.map((card) => (
             <div
-              className="stack-card-bg"
-              style={{ backgroundImage: `url('${card.bg}')` }}
-              aria-hidden="true"
-            />
-            <div className="stack-card-overlay" aria-hidden="true" />
-            <div className="stack-card-body">
-              <span className="step-label">{card.label}</span>
-              <h3 className="step-title">{card.title}</h3>
-              <p className="step-desc">{card.desc}</p>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
-                <a
-                  href={card.bookUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-pill btn-light btn-sm"
-                >
-                  Book nå
-                </a>
+              key={card.id}
+              id={card.id}
+              className="stack-card"
+            >
+              <div
+                className="stack-card-bg"
+                style={{ backgroundImage: `url('${card.bg}')` }}
+                aria-hidden="true"
+              />
+              <div className="stack-card-overlay" aria-hidden="true" />
+              <div className="stack-card-body">
+                <span className="step-label">{card.label}</span>
+                <h3 className="step-title">{card.title}</h3>
+                <p className="step-desc">{card.desc}</p>
+                <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
+                  <a
+                    href={card.bookUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-pill btn-light btn-sm"
+                  >
+                    Book nå
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )

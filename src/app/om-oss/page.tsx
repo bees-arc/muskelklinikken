@@ -99,7 +99,7 @@ export default function OmOss() {
               </p>
             </div>
             
-            <div style={{ borderTop: '1px solid var(--border)', paddingTop: '60px' }}>
+            <div id="team" style={{ borderTop: '1px solid var(--border)', paddingTop: '60px', scrollMarginTop: '120px' }}>
               <h2 style={{ fontSize: '2rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '12px', color: 'var(--text-1)' }}>Teamet</h2>
               <p style={{ color: 'var(--text-2)', marginBottom: '40px', fontSize: '1.05rem', fontFamily: 'var(--font-body)' }}>Våre terapeuter underviser internasjonalt, holder seg kontinuerlig oppdatert og samarbeider tett for å gi deg best mulig oppfølging.</p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '30px' }}>
