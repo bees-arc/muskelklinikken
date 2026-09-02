@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react'
 
+import ThemeToggle from '@/components/ThemeToggle'
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -102,8 +104,9 @@ export default function Header() {
           <a href="/kontakt" className="nav-item">Kontakt</a>
         </nav>
 
-        {/* Desktop CTA Action Buttons */}
+        {/* Desktop CTA Action Buttons & Theme Toggle */}
         <div className="header-ctas">
+          <ThemeToggle />
           <a
             href="tel:+4791907760"
             className="btn-pill-outline"
@@ -120,17 +123,20 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Mobile Hamburger Toggle */}
-        <button
-          className="mobile-toggle"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-expanded={mobileOpen}
-          aria-label="Meny"
-        >
-          <span className={`mobile-bar ${mobileOpen ? 'bar-top' : ''}`} />
-          <span className={`mobile-bar ${mobileOpen ? 'bar-mid' : ''}`} />
-          <span className={`mobile-bar ${mobileOpen ? 'bar-bot' : ''}`} />
-        </button>
+        {/* Mobile Hamburger Toggle & Theme Icon */}
+        <div className="mobile-header-actions">
+          <ThemeToggle />
+          <button
+            className="mobile-toggle"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-expanded={mobileOpen}
+            aria-label="Meny"
+          >
+            <span className={`mobile-bar ${mobileOpen ? 'bar-top' : ''}`} />
+            <span className={`mobile-bar ${mobileOpen ? 'bar-mid' : ''}`} />
+            <span className={`mobile-bar ${mobileOpen ? 'bar-bot' : ''}`} />
+          </button>
+        </div>
 
         {/* Mobile Navigation Drawer */}
         <div className={`mobile-drawer ${mobileOpen ? 'is-open' : ''}`}>

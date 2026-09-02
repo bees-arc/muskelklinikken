@@ -26,10 +26,23 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="no" className={poppins.variable}>
+    <html lang="no" className={poppins.variable} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://psno-patient-platform-fe.svc.pasientsky.no" />
         <link rel="dns-prefetch" href="https://psno-patient-platform-fe.svc.pasientsky.no" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('theme');
+                  var pref = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                  document.documentElement.setAttribute('data-theme', pref);
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
       </head>
       <body>{children}</body>
     </html>
