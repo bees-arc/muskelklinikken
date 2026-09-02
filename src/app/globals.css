@@ -1391,7 +1391,7 @@ button {
 .pillars-pin-section {
   position: relative;
   height: 480vh;
-  background: #0c0a08;
+  background: var(--bg-main);
 }
 
 .pillars-sticky-frame {
@@ -1422,6 +1422,7 @@ button {
   font-size: clamp(1.6rem, 2.8vw, 2.3rem);
   margin-bottom: 0;
   line-height: 1.15;
+  color: var(--text-pure);
 }
 
 .pillars-pin-counter {
@@ -1429,7 +1430,7 @@ button {
   display: flex;
   align-items: baseline;
   gap: 6px;
-  background: rgba(20, 16, 13, 0.8);
+  background: var(--bg-card);
   border: 1px solid var(--border-card);
   backdrop-filter: blur(12px);
   padding: 6px 16px;
