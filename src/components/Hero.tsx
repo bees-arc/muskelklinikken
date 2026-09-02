@@ -34,9 +34,9 @@ export default function Hero() {
       <div
         className="hero-outer-container"
         style={{
-          paddingInline: `${scrollProgress * 20}px`,
+          paddingInline: `${scrollProgress * 24}px`,
           paddingTop: `${scrollProgress * 16}px`,
-          maxWidth: scrollProgress === 0 ? '100%' : '1400px',
+          maxWidth: scrollProgress === 0 ? '100%' : '1380px',
         }}
       >
         <div

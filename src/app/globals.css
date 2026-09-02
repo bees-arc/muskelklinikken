@@ -99,14 +99,15 @@ button {
 
 /* ─── Shared Container ─── */
 .container {
-  width: min(1280px, 100%);
+  width: 100%;
+  max-width: 1380px;
   margin-inline: auto;
-  padding-inline: 32px;
+  padding-inline: 24px;
 }
 
 @media (max-width: 768px) {
   .container {
-    padding-inline: 20px;
+    padding-inline: 16px;
   }
 }
 
@@ -302,9 +303,9 @@ button {
 }
 
 .header-container {
-  max-width: 1280px;
+  max-width: 1380px;
   margin-inline: auto;
-  padding: 14px 32px;
+  padding: 14px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -737,12 +738,16 @@ button {
    3.5 ABOUT CUSTOM SECTION (Screenshot Layout)
    ========================================================== */
 .about-custom-section {
-  padding-block: 90px 70px;
+  padding-block: 40px 80px;
+  background: var(--bg-main);
+}
+
+.about-custom-card-wrap {
   background: #ffffff;
   color: #111110;
-  border-radius: 32px;
-  margin-inline: 20px;
-  margin-bottom: 40px;
+  border-radius: 36px;
+  padding: 72px 56px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
 .about-custom-top-grid {
@@ -1283,22 +1288,32 @@ button {
 
 .pillars-sticky-frame {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: 76px;
+  height: calc(100vh - 76px);
   width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-block: 20px;
+  padding-bottom: 24px;
 }
 
 .pillars-pin-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   width: 100%;
+}
+
+.pillars-pin-header .section-tag-cyan {
+  margin-bottom: 6px;
+}
+
+.pillars-pin-header .section-title-large {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  margin-bottom: 0;
+  line-height: 1.15;
 }
 
 .pillars-pin-counter {
@@ -1309,23 +1324,24 @@ button {
   background: rgba(20, 16, 13, 0.8);
   border: 1px solid var(--border-card);
   backdrop-filter: blur(12px);
-  padding: 8px 18px;
+  padding: 6px 16px;
   border-radius: 999px;
+  flex-shrink: 0;
 }
 
 .pillars-pin-counter .current-slide {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--accent-coffee);
 }
 
 .pillars-pin-counter .counter-sep {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--text-3);
 }
 
 .pillars-pin-counter .total-slides {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-2);
 }
@@ -1333,7 +1349,8 @@ button {
 .pillars-pin-track-viewport {
   width: 100%;
   overflow: hidden;
-  padding-inline: max(20px, calc((100vw - 1400px) / 2 + 20px));
+  padding-left: max(24px, calc((100vw - 1380px) / 2 + 24px));
+  padding-right: max(24px, calc((100vw - 1380px) / 2 + 24px));
 }
 
 .pillars-pin-track {
@@ -1344,12 +1361,12 @@ button {
 }
 
 .service-hero-card {
-  flex: 0 0 min(1360px, calc(100vw - 40px));
+  flex: 0 0 min(1332px, calc(100vw - 48px));
   position: relative;
-  height: calc(100vh - 180px);
-  max-height: 740px;
-  min-height: 520px;
-  border-radius: 36px;
+  height: calc(100vh - 210px);
+  max-height: 520px;
+  min-height: 380px;
+  border-radius: 28px;
   overflow: hidden;
   background: #140f0c;
   border: 1px solid var(--border-card);
@@ -1389,7 +1406,7 @@ button {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(12, 10, 8, 0.35) 0%,
+    rgba(12, 10, 8, 0.25) 0%,
     rgba(12, 10, 8, 0.5) 45%,
     rgba(12, 10, 8, 0.95) 100%
   );
@@ -1410,8 +1427,8 @@ button {
 .service-hero-inner-content {
   position: relative;
   z-index: 10;
-  padding: 60px 56px;
-  max-width: 880px;
+  padding: 36px 40px;
+  max-width: 780px;
   width: 100%;
 }
 
@@ -1421,12 +1438,12 @@ button {
   background: rgba(20, 16, 13, 0.8);
   border: 1px solid rgba(197, 155, 109, 0.4);
   backdrop-filter: blur(14px);
-  padding: 6px 16px;
+  padding: 5px 14px;
   border-radius: 9999px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   color: var(--accent-coffee);
   font-family: var(--font-heading);
-  font-size: 0.82rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1434,12 +1451,12 @@ button {
 
 .service-hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 4.8vw, 4rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   color: #ffffff;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   transition: color 0.2s ease;
 }
 .service-hero-card:hover .service-hero-title {
@@ -1447,30 +1464,38 @@ button {
 }
 
 .service-hero-tagline {
-  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-size: clamp(0.95rem, 1.35vw, 1.1rem);
   color: rgba(247, 244, 239, 0.9);
-  line-height: 1.6;
+  line-height: 1.55;
   max-width: 680px;
   margin-bottom: 0;
 }
 
 @media (max-width: 900px) {
+  .pillars-sticky-frame {
+    top: 64px;
+    height: calc(100vh - 64px);
+  }
   .service-hero-card {
-    height: calc(100vh - 160px);
-    border-radius: 28px;
+    height: calc(100vh - 180px);
+    max-height: 460px;
+    min-height: 320px;
+    border-radius: 24px;
   }
   .service-hero-inner-content {
-    padding: 36px 24px;
+    padding: 24px 20px;
   }
 }
 
 @media (max-width: 600px) {
   .service-hero-card {
-    height: calc(100vh - 140px);
-    border-radius: 24px;
+    height: calc(100vh - 160px);
+    max-height: 420px;
+    min-height: 280px;
+    border-radius: 20px;
   }
   .service-hero-inner-content {
-    padding: 28px 20px;
+    padding: 18px 16px;
   }
 }
 
