@@ -1273,35 +1273,82 @@ button {
 }
 
 /* ==========================================================
-   7. CORE PILLARS SHOWCASE ("Undersøk. Behandle. Styrk.")
+   7. PINNED HORIZONTAL SERVICES CAROUSEL (Scroll Locked)
    ========================================================== */
-.pillars-showcase-section {
-  padding-block: 100px;
+.pillars-pin-section {
+  position: relative;
+  height: 480vh;
   background: #0c0a08;
-  padding-block: 60px 80px;
-  overflow: hidden;
 }
 
-.pillars-fullscreen-track {
+.pillars-sticky-frame {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 20px;
+}
+
+.pillars-pin-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.pillars-pin-counter {
+  font-family: var(--font-heading);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  background: rgba(20, 16, 13, 0.8);
+  border: 1px solid var(--border-card);
+  backdrop-filter: blur(12px);
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+
+.pillars-pin-counter .current-slide {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-coffee);
+}
+
+.pillars-pin-counter .counter-sep {
+  font-size: 1rem;
+  color: var(--text-3);
+}
+
+.pillars-pin-counter .total-slides {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.pillars-pin-track-viewport {
+  width: 100%;
+  overflow: hidden;
+  padding-inline: max(20px, calc((100vw - 1400px) / 2 + 20px));
+}
+
+.pillars-pin-track {
   display: flex;
   gap: 28px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding-inline: max(20px, calc((100vw - 1400px) / 2 + 20px));
-  padding-bottom: 24px;
-  padding-top: 8px;
-}
-.pillars-fullscreen-track::-webkit-scrollbar {
-  display: none;
+  will-change: transform;
+  transition: transform 0.04s linear;
 }
 
 .service-hero-card {
   flex: 0 0 min(1360px, calc(100vw - 40px));
-  scroll-snap-align: center;
   position: relative;
-  min-height: 720px;
+  height: calc(100vh - 180px);
+  max-height: 740px;
+  min-height: 520px;
   border-radius: 36px;
   overflow: hidden;
   background: #140f0c;
@@ -1314,7 +1361,6 @@ button {
 }
 .service-hero-card:hover {
   border-color: var(--border-coffee);
-  transform: translateY(-4px);
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), var(--shadow-coffee);
 }
 
@@ -1334,7 +1380,7 @@ button {
   transition: transform 0.8s var(--ease-smooth), filter 0.5s ease;
 }
 .service-hero-card:hover .service-hero-bg-img {
-  transform: scale(1.04);
+  transform: scale(1.03);
   filter: brightness(0.75) contrast(1.1);
 }
 
@@ -1410,7 +1456,7 @@ button {
 
 @media (max-width: 900px) {
   .service-hero-card {
-    min-height: 560px;
+    height: calc(100vh - 160px);
     border-radius: 28px;
   }
   .service-hero-inner-content {
@@ -1420,7 +1466,7 @@ button {
 
 @media (max-width: 600px) {
   .service-hero-card {
-    min-height: 480px;
+    height: calc(100vh - 140px);
     border-radius: 24px;
   }
   .service-hero-inner-content {
