@@ -4,11 +4,11 @@ import ScrollReveal from './ScrollReveal'
 
 export default function MapSection() {
   return (
-    <section className="location-section" id="beliggenhet">
+    <section className="location-section" id="kontakt">
       <div className="container">
         {/* Section Header */}
         <ScrollReveal className="section-head-center">
-          <span className="section-tag-cyan">Sentral Beliggenhet</span>
+          <span className="section-tag-cyan">Kontakt & Beliggenhet</span>
           <h2 className="section-title-large">
             Besøk vår klinikk — <em className="accent-serif">midt i Oslo Sentrum</em>
           </h2>

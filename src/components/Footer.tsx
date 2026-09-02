@@ -4,7 +4,7 @@ import ScrollReveal from './ScrollReveal'
 
 export default function Footer() {
   return (
-    <footer className="fountain-footer" id="kontakt">
+    <footer className="fountain-footer" id="site-footer">
       <div className="container">
         {/* Main Footer Navigation Grid */}
         <div className="footer-main-grid">

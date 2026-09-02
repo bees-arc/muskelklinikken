@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useRef } from 'react'
 import ScrollReveal from './ScrollReveal'
 
 const PILLARS = [
@@ -7,30 +8,16 @@ const PILLARS = [
     id: 'fysikalsk',
     tag: 'Tverrfaglig Behandling',
     title: 'Fysikalsk Behandling',
-    tagline: 'Gjenopprett funksjon og lev smertefritt',
-    desc: 'Våre autoriserte terapeuter har bred spesialisering innen osteopati, fysioterapi, manuellterapi og idrettsskader. Vi identifiserer årsaken til smerten og behandler muskler, ledd og bindevev med dokumenterte metoder.',
-    features: [
-      'Leddmobilisering og manipulasjonsbehandling',
-      'Trykkbølgebehandling (ESWT)',
-      'Medisinsk akupunktur & dry needling',
-      'Målrettet rehabilitering for idrettsutøvere',
-    ],
+    tagline: 'Gjenopprett funksjon, lindre smerter og gjenvinn optimal mobilitet.',
     link: '/fysikalske-behandling',
-    linkText: 'Les om fysikalsk behandling →',
+    linkText: 'Utforsk fysikalsk behandling →',
     image: '/images/service_physical.webp',
   },
   {
     id: 'ultralyd',
     tag: 'Avansert Diagnostikk',
-    title: 'Ultralyddiagnostikk',
-    tagline: 'Presis veiledning og regenerativ medisin',
-    desc: 'Med moderne ultralydteknologi kan vi undersøke sener, leddbånd, muskler og slimposer i sanntid under bevegelse. I samråd med legespesialist tilbyr vi ultralydveiledet PRP-injeksjonsterapi og proloterapi.',
-    features: [
-      'Sanntids dynamisk vevsundersøkelse',
-      'PRP (blodplateberiket plasma) & proloterapi',
-      'Presis ultralydveiledet injeksjonsterapi',
-      'Rask tilgang uten behov for legehenvisning',
-    ],
+    title: 'Ultralyddiagnostikk & PRP',
+    tagline: 'Høyoppløselig vevsundersøkelse og presis regenerativ injeksjonsterapi.',
     link: '/ultralyddiagnostikk',
     linkText: 'Utforsk ultralyddiagnostikk →',
     image: '/images/service_injection.png',
@@ -39,14 +26,7 @@ const PILLARS = [
     id: 'pt',
     tag: 'Skreddersydd Trening',
     title: 'Personlig Trening',
-    tagline: 'Bygg en robust kropp som tåler hverdagen',
-    desc: 'Vi tilbyr skreddersydde PT-pakker for alle nivåer – fra toppidrettsutøvere til deg som vil komme i form. Våre trenere har høy kompetanse innen idrettsvitenskap og biomekanikk, og sikrer trygg og målrettet progresjon.',
-    features: [
-      '1-til-1 oppfølging i private treningsfasiliteter',
-      'Individuell biomekanisk screening og test',
-      'Målrettet styrke-, stabilitets- og mobilitetstrening',
-      'Kondisjons- og skadeforebyggende programmer',
-    ],
+    tagline: '1-til-1 oppfølging og skreddersydde programmer for en sterk, robust kropp.',
     link: '/personlig-trening',
     linkText: 'Se våre PT-pakker →',
     image: '/images/service_pt.webp',
@@ -55,14 +35,7 @@ const PILLARS = [
     id: 'bedrift',
     tag: 'Forebyggende Bedriftshelse',
     title: 'Bedriftstrening & Avtaler',
-    tagline: 'Invester i friske, motiverte og produktive ansatte',
-    desc: 'Våre bedriftsavtaler kombinerer forebyggende trening, ergonomisk rådgivning, helseprofiler og fysikalsk behandling på eller utenfor arbeidsplassen. Reduser sykefravær og skap et energisk arbeidsmiljø.',
-    features: [
-      'Ergonomisk kartlegging på arbeidsplassen',
-      'Felles treningsøkter, gruppetimer og workshops',
-      'Prioritert tilgang til behandling for ansatte',
-      'Helseprofiler og systematisk oppfølging',
-    ],
+    tagline: 'Forebyggende helse, ergonomi og skreddersydde avtaler for bedrifter.',
     link: '/bedriftsavtale',
     linkText: 'Les om bedriftsavtaler →',
     image: '/images/service_bedrift.webp',
@@ -71,14 +44,7 @@ const PILLARS = [
     id: 'coaching',
     tag: 'Livsstil & Prestasjon',
     title: 'Coaching & Mental Trening',
-    tagline: 'Helhetlig veiledning for kropp, sinn og prestasjon',
-    desc: 'I samarbeid med Coach Camacho tilbyr vi profesjonell livsstilscoaching, mental trening, stressmestring og ernæringsoptimalisering for å gi deg verktøyene du trenger for en sunn og balansert livsstil.',
-    features: [
-      '1-til-1 mental coaching og prestasjonsveiledning',
-      'Mestring av stress og hverdagsbelastning',
-      'Optimalisering av søvn, kosthold og restitusjon',
-      'Tett, personlig oppfølging mot dine livsmål',
-    ],
+    tagline: 'Helhetlig veiledning for kropp, sinn, stressmestring og prestasjon.',
     link: 'https://coachcamacho.com/en/',
     linkText: 'Besøk Coach Camacho ↗',
     image: '/images/service_coaching.webp',
@@ -86,10 +52,28 @@ const PILLARS = [
 ]
 
 export default function Pillars() {
+  const sliderRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
+
+  const checkScroll = () => {
+    if (!sliderRef.current) return
+    const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current
+    setCanScrollLeft(scrollLeft > 20)
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 20)
+  }
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (!sliderRef.current) return
+    const cardWidth = 380
+    const scrollAmount = direction === 'left' ? -cardWidth : cardWidth
+    sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+  }
+
   return (
     <section className="pillars-showcase-section" id="tjenester">
       <div className="container">
-        {/* Section Header with Right CTA */}
+        {/* Section Header with Left/Right Carousel Controls */}
         <div className="pillars-head-flex">
           <ScrollReveal>
             <span className="section-tag-cyan">Våre Kjerneområder</span>
@@ -98,69 +82,71 @@ export default function Pillars() {
             </h2>
           </ScrollReveal>
 
-          <ScrollReveal delay={100}>
-            <a
-              href="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=fb9771b2-5459-11e9-89e4-96d3108deae4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-pill-solid"
+          {/* Navigation Arrow Buttons */}
+          <div className="slider-nav-arrows">
+            <button
+              onClick={() => scroll('left')}
+              className={`slider-arrow-btn ${!canScrollLeft ? 'is-disabled' : ''}`}
+              aria-label="Forrige tjeneste"
             >
-              Book time hos terapeut
-            </a>
-          </ScrollReveal>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              className={`slider-arrow-btn ${!canScrollRight ? 'is-disabled' : ''}`}
+              aria-label="Neste tjeneste"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        {/* 5 Rich Pillar Cards Grid */}
-        <div className="pillars-cards-grid">
-          {PILLARS.map((p, idx) => (
-            <ScrollReveal key={p.id} delay={idx * 70}>
-              <div className="pillar-detail-card">
-                {/* Top Image Banner */}
-                <div className="pillar-card-image-wrap">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="pillar-card-image"
-                    loading="lazy"
-                  />
-                  <div className="pillar-card-tag-pill">{p.tag}</div>
-                </div>
+        {/* Horizontal Carousel Track */}
+        <div
+          ref={sliderRef}
+          onScroll={checkScroll}
+          className="pillars-carousel-track"
+        >
+          {PILLARS.map((p) => (
+            <a
+              key={p.id}
+              href={p.link}
+              target={p.link.startsWith('http') ? '_blank' : '_self'}
+              rel={p.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="pillar-carousel-card"
+            >
+              {/* Top Image Banner */}
+              <div className="pillar-card-image-wrap">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="pillar-card-image"
+                  loading="lazy"
+                />
+                <div className="pillar-card-tag-pill">{p.tag}</div>
+              </div>
 
-                {/* Card Content */}
-                <div className="pillar-card-body">
-                  <h3 className="pillar-card-heading">{p.title}</h3>
-                  <div className="pillar-card-tagline">{p.tagline}</div>
-                  <p className="pillar-card-text">{p.desc}</p>
+              {/* Card Body */}
+              <div className="pillar-card-body">
+                <h3 className="pillar-card-heading">{p.title}</h3>
+                <p className="pillar-card-tagline">{p.tagline}</p>
 
-                  {/* Feature Checkpoints */}
-                  <ul className="pillar-card-features">
-                    {p.features.map((feat, i) => (
-                      <li key={i} className="pillar-feature-item">
-                        <svg className="feature-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Card Bottom Link */}
-                  <div className="pillar-card-footer">
-                    <a
-                      href={p.link}
-                      target={p.link.startsWith('http') ? '_blank' : '_self'}
-                      rel={p.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="pillar-link-btn"
-                    >
-                      {p.linkText}
-                    </a>
-                  </div>
+                {/* Card Bottom Link */}
+                <div className="pillar-card-footer">
+                  <span className="pillar-link-btn">
+                    {p.linkText}
+                  </span>
                 </div>
               </div>
-            </ScrollReveal>
+            </a>
           ))}
         </div>
       </div>
     </section>
   )
 }
+

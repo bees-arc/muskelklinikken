@@ -1,35 +1,29 @@
-import AnnouncementBar from '@/components/AnnouncementBar'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
-import Testimonials from '@/components/Testimonials'
-import InsuranceAccreditation from '@/components/InsuranceAccreditation'
 import Pillars from '@/components/Pillars'
-import ClinicalOutcomes from '@/components/ClinicalOutcomes'
-import ServiceTiers from '@/components/ServiceTiers'
+import Testimonials from '@/components/Testimonials'
 import MapSection from '@/components/MapSection'
-import FAQ from '@/components/FAQ'
-import ConversionBanner from '@/components/ConversionBanner'
 import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
     <>
-      <AnnouncementBar />
       <Header />
       <main className="main-content-layout">
+        {/* 1. Hero */}
         <Hero />
+        {/* 2. Introduction */}
         <About />
-        <Testimonials />
-        <InsuranceAccreditation />
+        {/* 3. Services */}
         <Pillars />
-        <ClinicalOutcomes />
-        <ServiceTiers />
+        {/* 4. Reviews */}
+        <Testimonials />
+        {/* 5. Contact */}
         <MapSection />
-        <FAQ />
-        <ConversionBanner />
       </main>
       <Footer />
     </>
   )
 }
+

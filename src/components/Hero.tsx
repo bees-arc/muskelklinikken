@@ -1,10 +1,11 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import ScrollReveal from './ScrollReveal'
 
 export default function Hero() {
   const [isMuted, setIsMuted] = useState(true)
+  const [scrollProgress, setScrollProgress] = useState(0)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const toggleSound = () => {
@@ -14,10 +15,49 @@ export default function Hero() {
     }
   }
 
+  useEffect(() => {
+    let ticking = false
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY
+          // Animate shrink over the first 360px of scroll
+          const shrinkDistance = 360
+          const progress = Math.min(1, Math.max(0, scrollY / shrinkDistance))
+          setScrollProgress(progress)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <section className="hero-section">
-      <div className="hero-outer-container">
-        <div className="hero-frame-card">
+      <div
+        className="hero-outer-container"
+        style={{
+          paddingInline: `${scrollProgress * 20}px`,
+          paddingTop: `${scrollProgress * 16}px`,
+          maxWidth: scrollProgress === 0 ? '100%' : '1400px',
+        }}
+      >
+        <div
+          className="hero-frame-card"
+          style={{
+            borderRadius: `${scrollProgress * 36}px`,
+            minHeight: scrollProgress === 0 ? 'calc(100vh - 68px)' : '780px',
+            transform: `scale(${1 - scrollProgress * 0.025})`,
+            transformOrigin: 'top center',
+            boxShadow: scrollProgress > 0.05 ? '0 25px 80px rgba(0, 0, 0, 0.75)' : 'none',
+            border: scrollProgress > 0.05 ? '1px solid var(--border-card)' : '1px solid transparent',
+          }}
+        >
           {/* Background Video with Dark Cinematic Overlay */}
           <div className="hero-video-wrap" aria-hidden="true">
             <video
@@ -64,56 +104,21 @@ export default function Hero() {
                 Avansert ultralyddiagnostikk, evidensbasert manuellterapi og skreddersydd 
                 opptrening. Vi hjelper deg til en smertefri hverdag og optimal funksjon.
               </p>
-
-              {/* Call-to-Action Action Buttons */}
-              <div className="hero-actions-group">
-                <a
-                  href="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=fb9771b2-5459-11e9-89e4-96d3108deae4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-hero-primary"
-                >
-                  Book behandling
-                </a>
-                <a
-                  href="#tjenester"
-                  className="btn-hero-glass"
-                >
-                  Våre tjenester
-                </a>
-                <a
-                  href="tel:+4791907760"
-                  className="hero-phone-link"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                  </svg>
-                  <span>Ring 919 07 760</span>
-                </a>
-              </div>
             </ScrollReveal>
 
-            {/* Bottom Metrics / Feature Cards Overlay (Fountain Life style) */}
-            <div className="hero-feature-bar">
-              <div className="feature-bar-card">
-                <div className="feature-card-label">15+ års erfaring</div>
-                <div className="feature-card-title">Evidensbasert Behandling</div>
+            {/* Scroll Indicator Prompt */}
+            <div
+              className="hero-scroll-indicator"
+              style={{
+                opacity: Math.max(0, 1 - scrollProgress * 3),
+                transform: `translateY(${scrollProgress * 15}px)`,
+                pointerEvents: scrollProgress > 0.3 ? 'none' : 'auto',
+              }}
+            >
+              <span className="hero-scroll-label">Scroll for å utforske</span>
+              <div className="hero-scroll-mouse">
+                <div className="hero-scroll-wheel" />
               </div>
-
-              <div className="feature-bar-card">
-                <div className="feature-card-label">Høyoppløselig</div>
-                <div className="feature-card-title">Ultralyddiagnostikk & PRP</div>
-              </div>
-
-              <a href="/personlig-trening" className="feature-bar-card is-interactive">
-                <div className="feature-card-label">Skreddersydd</div>
-                <div className="feature-card-title-link">
-                  <span>Rehabilitering & PT</span>
-                  <svg className="feature-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-              </a>
             </div>
 
             {/* Sound Toggle Button */}
@@ -142,3 +147,4 @@ export default function Hero() {
     </section>
   )
 }
+
