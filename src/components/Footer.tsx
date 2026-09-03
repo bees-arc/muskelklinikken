@@ -43,8 +43,7 @@ export default function Footer() {
             <h4 className="footer-col-heading">Tjenester</h4>
             <ul className="footer-links-list">
               <li><a href="/fysikalske-behandling">Fysikalsk Behandling</a></li>
-              <li><a href="/ultralyddiagnostikk">Ultralyddiagnostikk</a></li>
-              <li><a href="/#tjenester">PRP & Injeksjonsterapi</a></li>
+              <li><a href="/ultralyddiagnostikk">Ultralyddiagnostikk & PRP</a></li>
               <li><a href="/personlig-trening">Personlig Trening</a></li>
               <li><a href="/bedriftsavtale">Bedriftsavtaler</a></li>
               <li><a href="https://coachcamacho.com/en/" target="_blank" rel="noopener noreferrer">Coaching & Livsstil ↗</a></li>

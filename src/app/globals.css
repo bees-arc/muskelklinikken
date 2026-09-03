@@ -520,6 +520,16 @@ button {
   transform: translateY(-1px);
 }
 
+.dropdown-card-featured {
+  grid-column: 1 / -1;
+  background: rgba(197, 155, 109, 0.08);
+  border-color: rgba(197, 155, 109, 0.25);
+}
+.dropdown-card-featured:hover {
+  background: rgba(197, 155, 109, 0.15);
+  border-color: var(--accent-coffee);
+}
+
 .dropdown-card-title {
   font-family: var(--font-heading);
   font-size: 0.9rem;
@@ -2298,7 +2308,205 @@ button {
   }
   .footer-bottom-bar {
     flex-direction: column;
-    text-align: center;
-    gap: 20px;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================
+   14. SERVICE & CONTENT SUBPAGES (Luxury Detail Layout)
+   ========================================================== */
+.subpage-container {
+  padding-top: 40px;
+  padding-bottom: 90px;
+  background-color: var(--bg-main);
+  min-height: 80vh;
+}
+
+.subpage-header-wrap {
+  margin-bottom: 36px;
+}
+
+.subpage-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-pure);
+  margin-bottom: 16px;
+}
+
+.subpage-subtitle {
+  font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+  color: var(--text-2);
+  line-height: 1.65;
+  max-width: 860px;
+  margin-bottom: 24px;
+}
+
+.subpage-banner-card {
+  width: 100%;
+  height: 420px;
+  border-radius: 32px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.subpage-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.subpage-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.subpage-detail-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: 28px;
+  padding: 44px 38px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s var(--ease-smooth);
+}
+.subpage-detail-card:hover {
+  border-color: var(--border-coffee);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.subpage-detail-card.is-fullwidth {
+  grid-column: 1 / -1;
+}
+
+.subpage-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.subpage-card-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(197, 155, 109, 0.12);
+  border: 1px solid rgba(197, 155, 109, 0.35);
+  color: var(--accent-coffee);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.subpage-card-badge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-coffee);
+  margin-bottom: 4px;
+}
+
+.subpage-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-pure);
+  line-height: 1.25;
+}
+
+.subpage-card-body {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-2);
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.subpage-feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.subpage-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-1);
+}
+
+.subpage-feature-icon {
+  color: var(--accent-coffee);
+  flex-shrink: 0;
+}
+
+.subpage-cta-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: 28px;
+  padding: 44px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-md);
+  margin-top: 60px;
+}
+
+.subpage-cta-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-pure);
+  margin-bottom: 8px;
+}
+
+.subpage-cta-content p {
+  font-size: 1rem;
+  color: var(--text-2);
+}
+
+.subpage-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .subpage-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .subpage-banner-card {
+    height: 280px;
+    border-radius: 24px;
+  }
+  .subpage-detail-card {
+    padding: 32px 24px;
+  }
+  .subpage-cta-box {
+    padding: 32px 24px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

@@ -71,8 +71,8 @@ export default function Header() {
                   </a>
 
                   <a href="/ultralyddiagnostikk" className="dropdown-card" onClick={() => setServicesDropdown(false)}>
-                    <div className="dropdown-card-title">Ultralyddiagnostikk</div>
-                    <div className="dropdown-card-desc">Høyoppløselig billeddiagnostikk og veiledet injeksjonsterapi.</div>
+                    <div className="dropdown-card-title">Ultralyddiagnostikk & PRP</div>
+                    <div className="dropdown-card-desc">Høyoppløselig vevsundersøkelse og presis injeksjonsterapi.</div>
                   </a>
 
                   <a href="/personlig-trening" className="dropdown-card" onClick={() => setServicesDropdown(false)}>
@@ -85,14 +85,9 @@ export default function Header() {
                     <div className="dropdown-card-desc">Forebyggende helse, ergonomi og bedriftstrening.</div>
                   </a>
 
-                  <a href="/#tjenester" className="dropdown-card" onClick={() => setServicesDropdown(false)}>
-                    <div className="dropdown-card-title">PRP & Injeksjonsterapi</div>
-                    <div className="dropdown-card-desc">Regenerativ medisin i samarbeid med legespesialist.</div>
-                  </a>
-
-                  <a href="https://coachcamacho.com/en/" target="_blank" rel="noopener noreferrer" className="dropdown-card">
+                  <a href="https://coachcamacho.com/en/" target="_blank" rel="noopener noreferrer" className="dropdown-card dropdown-card-featured">
                     <div className="dropdown-card-title">Coaching & Livsstil ↗</div>
-                    <div className="dropdown-card-desc">Ernæringsveiledning og mental prestasjonscoaching.</div>
+                    <div className="dropdown-card-desc">Ernæringsveiledning og mental prestasjonscoaching hos Coach Camacho.</div>
                   </a>
                 </div>
               </div>

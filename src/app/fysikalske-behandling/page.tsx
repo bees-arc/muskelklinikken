@@ -1,90 +1,121 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
+export const metadata = {
+  title: 'Fysikalsk Behandling – Muskelklinikken Oslo',
+  description:
+    'Helhetlig fysioterapi, osteopati, manuellterapi og rehabilitering i Oslo Sentrum. Finn årsaken til smerten og få evidensbasert behandling.',
+}
+
 const SPECIALTIES = [
-  { title: 'Fysioterapi', desc: 'Behandling av muskler, ledd, sener og nerver for å lindre smerter, øke mobilitet og gjenopprette normal funksjon.' },
-  { title: 'Osteopati', desc: 'En helhetlig manuell behandlingsform som ser sammenhengen mellom kroppens struktur, funksjon, organsystemer og bevegelsesapparat.' },
-  { title: 'Idretts- & Muskelterapi', desc: 'Dypgående massasje, triggerpunktbehandling, tøyning og trykkbølgebehandling rettet mot idrettsskader og muskelspenninger.' },
-  { title: 'Rehabilitering & Opptrening', desc: 'Skreddersydde trenings- og rehabiliteringsøvelser som hjelper deg tryggest mulig tilbake til hverdagen eller idretten etter skade eller operasjon.' },
+  {
+    title: 'Fysioterapi',
+    desc: 'Grundig undersøkelse og behandling av muskler, ledd, sener og nerver for å lindre smerter, øke mobilitet og gjenopprette normal funksjon.',
+    badge: 'Klinisk Fagfelt',
+  },
+  {
+    title: 'Osteopati',
+    desc: 'En helhetlig manuell behandlingsform som ser sammenhengen mellom kroppens struktur, funksjon, organsystemer og bevegelsesapparat.',
+    badge: 'Holistisk Tilnærming',
+  },
+  {
+    title: 'Idretts- & Muskelterapi',
+    desc: 'Dypgående massasje, triggerpunktbehandling, tøyning og trykkbølgebehandling (ESWT) rettet mot idrettsskader og akutte/kroniske muskelspenninger.',
+    badge: 'Idrettsmedisin',
+  },
+  {
+    title: 'Rehabilitering & Opptrening',
+    desc: 'Skreddersydde trenings- og rehabiliteringsprogrammer som hjelper deg tryggest og raskest mulig tilbake til hverdagen eller idretten etter skade.',
+    badge: 'Målrettet Fremgang',
+  },
 ]
 
 export default function FysikalskBehandling() {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: '100px', minHeight: '80vh', backgroundColor: 'var(--bg)' }}>
-        <section style={{ paddingBlock: '80px' }}>
+      <main className="subpage-container">
+        <section>
           <div className="container">
-            <span className="overline" style={{ display: 'block', marginBottom: '12px', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 700 }}>
-              Tjenester
-            </span>
-            
-            <div style={{ backgroundColor: 'rgba(219, 68, 85, 0.06)', border: '1px solid rgba(219, 68, 85, 0.2)', padding: '16px 24px', borderRadius: '12px', marginBottom: '32px', maxWidth: '900px' }}>
-              <p style={{ color: '#db4455', fontWeight: 600, fontSize: '0.95rem', margin: 0 }}>
-                Merk: Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.
+            {/* Header / Intro */}
+            <div className="subpage-header-wrap">
+              <span className="section-tag-cyan">Tverrfaglig Behandling</span>
+              <h1 className="subpage-title">
+                Fysikalsk Behandling hos Muskelklinikken
+              </h1>
+              <p className="subpage-subtitle">
+                En helhetlig, tverrfaglig og moderne tilnærming til smerte, rehabilitering og bevegelsesglede. Vi kartlegger årsaken bak smerten din og gir deg dokumentert behandling.
               </p>
-            </div>
 
-            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
-              Fysikalsk Behandling hos Muskelklinikken
-            </h1>
-            <p style={{ fontSize: '1.15rem', fontFamily: 'var(--font-chakra)', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--text-2)', marginBottom: '40px', lineHeight: 1.5 }}>
-              En helhetlig, tverrfaglig og moderne tilnærming til smerte, rehabilitering og bevegelsesglede.
-            </p>
-
-            <div style={{ width: '100%', height: '350px', borderRadius: '24px', overflow: 'hidden', marginBottom: '50px', border: '1px solid var(--border)' }}>
-              <img 
-                src="/images/service_physical.webp" 
-                alt="Fysikalsk behandling hos Muskelklinikken" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.8) contrast(1.05) brightness(0.95)' }} 
-              />
-            </div>
-            
-            <div style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text-2)', maxWidth: '900px', marginBottom: '60px', fontFamily: 'var(--font-body)' }}>
-              <p style={{ marginBottom: '24px' }}>
-                Vi er stolte av å være eksperter innen vårt felt. Våre terapeuter underviser internasjonalt og holder seg kontinuerlig oppdatert ved å delta på kurs årlig og samarbeide med anerkjente institutter og professorer. Vi tror på evidensbasert kunnskap for å gi deg det absolutt beste resultatet.
-              </p>
-              <p style={{ marginBottom: '24px' }}>
-                Vårt team har bred utdanning innen fysioterapi, osteopati, manuellterapi, idrettsmedisin, trykkbølgebehandling, og vi er sertifiserte idrett- og rehabiliteringsspesialister. Vi samarbeider også tett med vår lege for å tilby avanserte tjenester som ultralyddiagnostikk og injeksjonsterapier (PRP og proloterapi) når det er nødvendig.
-              </p>
-              <p style={{ marginBottom: '24px' }}>
-                Hos oss er du i trygge hender. Vi ser hele mennesket, kartlegger årsakene bak smerten din, og hjelper deg på veien mot en smertefri og bedre hverdag.
-              </p>
-            </div>
-            
-            <div style={{ borderTop: '1px solid var(--border)', paddingTop: '60px', marginBottom: '60px' }}>
-              <h2 style={{ fontSize: '2rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '40px', color: 'var(--text-1)' }}>Våre fagområder</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
-                {SPECIALTIES.map((spec) => (
-                  <div 
-                    key={spec.title} 
-                    style={{ 
-                      backgroundColor: 'var(--bg-card)', 
-                      border: '1px solid var(--border)', 
-                      borderRadius: '16px', 
-                      padding: '30px', 
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
-                    }}
-                  >
-                    <h3 style={{ fontSize: '1.2rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '12px', color: 'var(--text-1)' }}>{spec.title}</h3>
-                    <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--text-2)', fontFamily: 'var(--font-body)' }}>{spec.desc}</p>
-                  </div>
-                ))}
+              {/* Notice pill */}
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                background: 'rgba(197, 155, 109, 0.12)',
+                border: '1px solid rgba(197, 155, 109, 0.35)',
+                padding: '10px 18px',
+                borderRadius: '12px',
+                fontSize: '0.88rem',
+                color: 'var(--text-1)',
+                fontWeight: 500,
+              }}>
+                <span style={{ color: 'var(--accent-coffee)', fontWeight: 700 }}>Merk:</span>
+                <span>Finn-Tore tar ikke imot forsikringspasienter, kun private kunder. Våre øvrige terapeuter har direkteoppgjør med alle forsikringsselskaper.</span>
               </div>
             </div>
-            
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', borderTop: '1px solid var(--border)', paddingTop: '40px' }}>
-              <a
-                href="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=fb9771b2-5459-11e9-89e4-96d3108deae4"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-pill btn-black btn-lg"
-              >
-                Bestill time online
-              </a>
-              <a href="/priser" className="btn btn-pill btn-outline btn-lg">
-                Se priser
-              </a>
+
+            {/* Featured Image Banner */}
+            <div className="subpage-banner-card">
+              <img
+                src="/images/service_physical.webp"
+                alt="Fysikalsk behandling hos Muskelklinikken"
+                className="subpage-banner-img"
+              />
+            </div>
+
+            {/* Specialties Grid */}
+            <div className="subpage-grid-2">
+              {SPECIALTIES.map((spec) => (
+                <div key={spec.title} className="subpage-detail-card">
+                  <div className="subpage-card-header">
+                    <div className="subpage-card-icon-wrap" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <span className="subpage-card-badge">{spec.badge}</span>
+                      <h2 className="subpage-card-title">{spec.title}</h2>
+                    </div>
+                  </div>
+
+                  <p className="subpage-card-body">
+                    {spec.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom CTA Box */}
+            <div className="subpage-cta-box">
+              <div className="subpage-cta-content">
+                <h3>Klar for en smertefri hverdag?</h3>
+                <p>Bestill time hos en av våre autoriserte terapeuter i dag. Ingen henvisning nødvendig.</p>
+              </div>
+              <div className="subpage-cta-actions">
+                <a
+                  href="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=fb9771b2-5459-11e9-89e4-96d3108deae4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill-solid"
+                >
+                  Bestill time online
+                </a>
+                <a href="/priser" className="btn-pill-outline">
+                  Se priser
+                </a>
+              </div>
             </div>
           </div>
         </section>
