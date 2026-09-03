@@ -79,11 +79,6 @@ export default function PersonligTrening() {
             <div className="subpage-grid-2" style={{ marginBottom: '60px' }}>
               <div className="subpage-detail-card">
                 <div className="subpage-card-header">
-                  <div className="subpage-card-icon-wrap" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 20V10M12 20V4M6 20v-6"/>
-                    </svg>
-                  </div>
                   <div>
                     <span className="subpage-card-badge">Helhetlig Tilnærming</span>
                     <h2 className="subpage-card-title">Målrettet Fremgang & Trygghet</h2>
@@ -96,11 +91,6 @@ export default function PersonligTrening() {
 
               <div className="subpage-detail-card">
                 <div className="subpage-card-header">
-                  <div className="subpage-card-icon-wrap" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                    </svg>
-                  </div>
                   <div>
                     <span className="subpage-card-badge">Helsefaglig Bakgrunn</span>
                     <h2 className="subpage-card-title">Terapeuter & Trenere i Ett</h2>
