@@ -1465,11 +1465,24 @@ button {
   color: var(--text-2);
 }
 
+.pillars-card-stage {
+  width: 100%;
+  max-width: 1380px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@media (max-width: 768px) {
+  .pillars-card-stage {
+    padding-inline: 16px;
+  }
+}
+
 .pillars-pin-track-viewport {
   width: 100%;
   overflow: hidden;
-  padding-left: max(24px, calc((100vw - 1380px) / 2 + 24px));
-  padding-right: max(24px, calc((100vw - 1380px) / 2 + 24px));
+  border-radius: 28px;
+  position: relative;
 }
 
 .pillars-pin-track {
@@ -1480,7 +1493,8 @@ button {
 }
 
 .service-hero-card {
-  flex: 0 0 min(1332px, calc(100vw - 48px));
+  flex: 0 0 100%;
+  width: 100%;
   position: relative;
   height: calc(100vh - 210px);
   max-height: 520px;
@@ -1493,7 +1507,7 @@ button {
   display: flex;
   align-items: flex-end;
   text-decoration: none;
-  transition: transform 0.4s var(--ease-smooth), border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .service-hero-card:hover {
   border-color: var(--border-coffee);
