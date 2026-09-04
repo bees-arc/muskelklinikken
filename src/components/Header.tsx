@@ -44,7 +44,16 @@ export default function Header() {
           <img
             src="/images/muskel_logo.webp"
             alt="Muskelklinikken"
-            className="brand-logo-img"
+            className="brand-logo-img logo-dark"
+            width={170}
+            height={40}
+            decoding="async"
+            style={{ height: '38px', width: 'auto' }}
+          />
+          <img
+            src="/Logo (1).png"
+            alt="Muskelklinikken"
+            className="brand-logo-img logo-light"
             width={170}
             height={40}
             decoding="async"

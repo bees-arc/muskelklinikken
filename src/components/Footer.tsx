@@ -14,7 +14,15 @@ export default function Footer() {
               <img
                 src="/images/muskel_logo.webp"
                 alt="Muskelklinikken"
-                className="footer-logo-img"
+                className="footer-logo-img logo-dark"
+                width={170}
+                height={40}
+                style={{ height: '40px', width: 'auto' }}
+              />
+              <img
+                src="/Logo (1).png"
+                alt="Muskelklinikken"
+                className="footer-logo-img logo-light"
                 width={170}
                 height={40}
                 style={{ height: '40px', width: 'auto' }}
