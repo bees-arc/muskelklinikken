@@ -102,71 +102,53 @@ export default function Priser() {
     <>
       <AnnouncementBar />
       <Header />
-      <main style={{ paddingTop: '40px', minHeight: '80vh', backgroundColor: 'var(--bg-main)' }}>
-        <section style={{ paddingBlock: '60px 100px' }}>
+      <main className="subpage-container">
+        <section>
           <div className="container">
             {/* Header */}
-            <div style={{ textAlign: 'center', maxWidth: '820px', marginInline: 'auto', marginBottom: '60px' }}>
+            <div className="subpage-header-wrap" style={{ textAlign: 'center', maxWidth: '820px', marginInline: 'auto' }}>
               <span className="section-tag-cyan" style={{ justifyContent: 'center' }}>
                 Prisoversikt
               </span>
-              <h1 className="section-title-large">
+              <h1 className="subpage-title">
                 Transparente priser — <em className="accent-serif">forankret i kvalitet</em>
               </h1>
-              <p className="section-desc-center">
+              <p className="subpage-subtitle" style={{ marginInline: 'auto' }}>
                 Vi tilbyr tverrfaglige helsetjenester tilpasset dine behov. Nedenfor finner du en fullstendig oversikt over våre priser for undersøkelser, behandlinger, prestasjonstesting og gentester.
               </p>
             </div>
 
             {/* Price Category Cards */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', maxWidth: '1080px', marginInline: 'auto', width: '100%', marginBottom: '56px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '1080px', marginInline: 'auto', width: '100%', marginBottom: '48px' }}>
               {PRICE_CATEGORIES.map((category) => (
                 <div
                   key={category.title}
-                  style={{
-                    backgroundColor: 'var(--bg-surface)',
-                    border: '1px solid var(--border-card)',
-                    borderRadius: '28px',
-                    padding: '36px 40px',
-                    boxShadow: 'var(--shadow-md)',
-                  }}
+                  className="price-card-responsive"
                 >
-                  <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '18px', marginBottom: '24px' }}>
-                    <h2 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-heading)', fontWeight: 700, color: '#ffffff', margin: 0 }}>
+                  <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '16px', marginBottom: '20px' }}>
+                    <h2 style={{ fontSize: '1.2rem', fontFamily: 'var(--font-heading)', fontWeight: 700, color: 'var(--text-pure)', margin: 0 }}>
                       {category.title}
                     </h2>
                     {category.description && (
-                      <span style={{ fontSize: '0.84rem', color: 'var(--accent-coffee)', fontWeight: 600 }}>
+                      <span style={{ fontSize: '0.82rem', color: 'var(--accent-coffee)', fontWeight: 600 }}>
                         {category.description}
                       </span>
                     )}
                   </div>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                     {category.items.map((item) => (
-                      <div key={item.name} style={{ borderBottom: '1px solid rgba(255, 245, 235, 0.05)', paddingBottom: '16px' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', alignItems: 'baseline' }}>
-                          <span style={{ fontWeight: 600, color: 'var(--text-1)', fontSize: '1.05rem' }}>
+                      <div key={item.name} style={{ borderBottom: '1px solid rgba(255, 245, 235, 0.05)', paddingBottom: '14px' }}>
+                        <div className="price-item-row">
+                          <span style={{ fontWeight: 600, color: 'var(--text-1)', fontSize: '1rem', lineHeight: 1.4 }}>
                             {item.name}
                           </span>
-                          <span
-                            style={{
-                              fontWeight: 700,
-                              fontFamily: 'var(--font-heading)',
-                              color: 'var(--accent-coffee)',
-                              fontSize: '1.15rem',
-                              whiteSpace: 'nowrap',
-                              backgroundColor: 'rgba(197, 155, 109, 0.12)',
-                              padding: '4px 14px',
-                              borderRadius: '999px',
-                              border: '1px solid rgba(197, 155, 109, 0.3)',
-                            }}
-                          >
+                          <span className="price-item-badge">
                             {item.price}
                           </span>
                         </div>
                         {item.desc && (
-                          <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', marginTop: '8px', lineHeight: 1.6, maxWidth: '900px' }}>
+                          <p style={{ fontSize: '0.88rem', color: 'var(--text-2)', marginTop: '8px', lineHeight: 1.6, maxWidth: '900px' }}>
                             {item.desc}
                           </p>
                         )}
@@ -178,27 +160,25 @@ export default function Priser() {
 
               {/* Personal Training & Coaching Card */}
               <div
+                className="price-card-responsive"
                 style={{
                   background: 'linear-gradient(135deg, #18130f 0%, #201a14 100%)',
-                  border: '1px solid rgba(197, 155, 109, 0.35)',
-                  borderRadius: '28px',
-                  padding: '40px',
-                  boxShadow: 'var(--shadow-lg), var(--shadow-coffee)',
+                  borderColor: 'rgba(197, 155, 109, 0.35)',
                 }}
               >
                 <div style={{ display: 'inline-block', background: 'rgba(197, 155, 109, 0.18)', color: 'var(--accent-coffee)', padding: '4px 12px', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '14px' }}>
                   Skreddersydd Oppfølging
                 </div>
-                <h2 style={{ fontSize: '1.4rem', fontFamily: 'var(--font-heading)', fontWeight: 700, marginBottom: '14px', color: '#ffffff' }}>
+                <h2 style={{ fontSize: '1.35rem', fontFamily: 'var(--font-heading)', fontWeight: 700, marginBottom: '12px', color: '#ffffff' }}>
                   Personlig trening, coaching og mentaltrening
                 </h2>
-                <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--text-2)', marginBottom: '16px' }}>
+                <p style={{ fontSize: '0.98rem', lineHeight: 1.7, color: 'var(--text-2)', marginBottom: '16px' }}>
                   Vi tilbyr individuell oppfølging for deg som ønsker en reell livsstilsendring, forbedre helsen din, prestere bedre, bygge muskler, redusere vekt eller komme tilbake etter skade. Vi har erfaring med alt fra unge talenter og hverdagsmosjonister til OL-utøvere og landslagsspillere.
                 </p>
-                <p style={{ fontSize: '1rem', fontWeight: 600, color: '#ffffff', marginBottom: '24px' }}>
+                <p style={{ fontSize: '0.98rem', fontWeight: 600, color: '#ffffff', marginBottom: '24px' }}>
                   Ta kontakt i dag for et uforpliktende tilbud tilpasset dine mål.
                 </p>
-                <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
                   <a
                     href="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=fb9771b2-5459-11e9-89e4-96d3108deae4"
                     target="_blank"
@@ -220,7 +200,7 @@ export default function Priser() {
                 backgroundColor: 'var(--bg-surface)',
                 border: '1px solid var(--border-card)',
                 borderRadius: '20px',
-                padding: '24px 32px',
+                padding: '20px 24px',
                 maxWidth: '1080px',
                 marginInline: 'auto',
                 display: 'flex',
@@ -228,9 +208,9 @@ export default function Priser() {
                 gap: '16px',
               }}
             >
-              <span style={{ fontSize: '1.8rem' }}>🛡️</span>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-2)', lineHeight: 1.6, margin: 0 }}>
-                <strong style={{ color: '#ffffff' }}>Helseforsikring:</strong> Vi samarbeider tett med flere aktører i forsikringsbransjen (If, Storebrand, Gjensidige, Vertikal Helse, Falck, Fremtind). Har du godkjent helseforsikring, kan du få behandlingen hos oss helt eller delvis dekket – uten lang ventetid.
+              <span style={{ fontSize: '1.6rem', flexShrink: 0 }}>🛡️</span>
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.6, margin: 0 }}>
+                <strong style={{ color: 'var(--text-pure)' }}>Helseforsikring:</strong> Vi samarbeider tett med flere aktører i forsikringsbransjen (If, Storebrand, Gjensidige, Vertikal Helse, Falck, Fremtind). Har du godkjent helseforsikring, kan du få behandlingen hos oss helt eller delvis dekket – uten lang ventetid.
               </p>
             </div>
           </div>

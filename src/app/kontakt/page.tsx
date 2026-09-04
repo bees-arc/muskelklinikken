@@ -10,7 +10,6 @@ export default function Kontakt() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Simulated form submission
     setSubmitted(true)
     setFormState({ name: '', email: '', phone: '', subject: '', message: '' })
   }
@@ -18,44 +17,51 @@ export default function Kontakt() {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: '100px', minHeight: '80vh', backgroundColor: 'var(--bg)' }}>
-        <section style={{ paddingBlock: '80px' }}>
+      <main className="subpage-container">
+        <section>
           <div className="container">
-            <span className="overline" style={{ display: 'block', marginBottom: '12px', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 700 }}>
-              Kontakt oss
-            </span>
-            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
-              Ta kontakt med Muskelklinikken
-            </h1>
-            <p style={{ fontSize: '1.15rem', color: 'var(--text-2)', maxWidth: '900px', marginBottom: '60px', lineHeight: 1.7 }}>
-              Velkommen til Muskelklinikken! Vi gleder oss til å høre fra deg. Hos oss er terskelen lav, og vi ønsker alle hjertelig velkommen til å ta kontakt. Uansett om du har spørsmål, ønsker informasjon om våre tjenester, eller vil diskutere dine helsemål, er vi her for deg. Vi er et inkluderende sted hvor du kan føle deg trygg og ivaretatt.
-            </p>
+            {/* Page Header */}
+            <div className="subpage-header-wrap">
+              <span className="section-tag-cyan">Kontakt oss</span>
+              <h1 className="subpage-title">
+                Ta kontakt med Muskelklinikken
+              </h1>
+              <p className="subpage-subtitle">
+                Velkommen til Muskelklinikken! Hos oss er terskelen lav, og vi ønsker alle hjertelig velkommen til å ta kontakt. Uansett om du har spørsmål, ønsker informasjon om våre tjenester, eller vil diskutere dine helsemål, er vi her for deg.
+              </p>
+            </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', marginBottom: '60px' }}>
+            {/* 2-Column Responsive Grid */}
+            <div className="responsive-grid-2" style={{ marginBottom: '60px' }}>
               
-              {/* Left Column: Contact details & Map */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-                <div 
-                  style={{ 
-                    backgroundColor: 'var(--bg-card)', 
-                    border: '1px solid var(--border)', 
-                    borderRadius: '16px', 
-                    padding: '36px', 
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.02)' 
-                  }}
-                >
-                  <h2 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '24px', color: 'var(--text-1)' }}>
-                    Kontaktinformasjon
-                  </h2>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '1.05rem', color: 'var(--text-2)' }}>
+              {/* Left Column: Contact info & Map */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                <div className="subpage-detail-card">
+                  <div className="subpage-card-header">
                     <div>
-                      <strong>Adresse:</strong> Dronningens gt. 15, 0152 Oslo, Norway
+                      <span className="subpage-card-badge">Klinikk i Sentrum</span>
+                      <h2 className="subpage-card-title">Kontaktinformasjon</h2>
+                    </div>
+                  </div>
+                  
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '1rem', color: 'var(--text-2)' }}>
+                    <div>
+                      <strong style={{ color: 'var(--text-pure)' }}>Adresse:</strong> Dronningens gt. 15, 0152 Oslo, Norway
                     </div>
                     <div>
-                      <strong>Telefon:</strong> <a href="tel:+4791907760" style={{ textDecoration: 'underline' }}>+47 919 07 760</a>
+                      <strong style={{ color: 'var(--text-pure)' }}>Telefon:</strong>{' '}
+                      <a href="tel:+4791907760" style={{ color: 'var(--accent-coffee)', textDecoration: 'underline' }}>
+                        +47 919 07 760
+                      </a>
                     </div>
                     <div>
-                      <strong>E-post:</strong> <a href="mailto:post@muskelklinikken.no" style={{ textDecoration: 'underline' }}>post@muskelklinikken.no</a>
+                      <strong style={{ color: 'var(--text-pure)' }}>E-post:</strong>{' '}
+                      <a href="mailto:post@muskelklinikken.no" style={{ color: 'var(--accent-coffee)', textDecoration: 'underline' }}>
+                        post@muskelklinikken.no
+                      </a>
+                    </div>
+                    <div>
+                      <strong style={{ color: 'var(--text-pure)' }}>Åpningstider:</strong> Mandag – Fredag: 07:00 – 19:00
                     </div>
                   </div>
                 </div>
@@ -63,11 +69,11 @@ export default function Kontakt() {
                 <div 
                   style={{
                     width: '100%',
-                    height: '350px',
-                    borderRadius: '16px',
+                    height: '300px',
+                    borderRadius: '20px',
                     overflow: 'hidden',
-                    border: '1px solid var(--border)',
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.02)',
+                    border: '1px solid var(--border-card)',
+                    boxShadow: 'var(--shadow-md)',
                     position: 'relative'
                   }}
                 >
@@ -86,85 +92,86 @@ export default function Kontakt() {
               </div>
 
               {/* Right Column: Contact form */}
-              <div 
-                style={{ 
-                  backgroundColor: 'var(--bg-card)', 
-                  border: '1px solid var(--border)', 
-                  borderRadius: '16px', 
-                  padding: '36px', 
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.02)' 
-                }}
-              >
-                <h2 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '24px', color: 'var(--text-1)' }}>
-                  Send oss en melding
-                </h2>
+              <div className="subpage-detail-card">
+                <div className="subpage-card-header">
+                  <div>
+                    <span className="subpage-card-badge">Direkte Henvendelse</span>
+                    <h2 className="subpage-card-title">Send oss en melding</h2>
+                  </div>
+                </div>
+
                 {submitted ? (
-                  <div style={{ backgroundColor: 'rgba(74, 234, 220, 0.08)', border: '1px solid rgba(74, 234, 220, 0.3)', padding: '24px', borderRadius: '12px', textAlign: 'center' }}>
-                    <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '12px' }}></span>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px', color: 'var(--text-1)' }}>Takk for din melding!</h3>
+                  <div style={{ backgroundColor: 'rgba(197, 155, 109, 0.12)', border: '1px solid rgba(197, 155, 109, 0.35)', padding: '24px', borderRadius: '16px', textAlign: 'center' }}>
+                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px', color: 'var(--text-pure)' }}>Takk for din melding!</h3>
                     <p style={{ fontSize: '0.95rem', color: 'var(--text-2)' }}>Vi har mottatt meldingen din og vil svare deg så fort som mulig.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                  <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label htmlFor="name" style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-2)' }}>Navn *</label>
+                      <label htmlFor="name" style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-2)' }}>Navn *</label>
                       <input 
                         type="text" 
                         id="name" 
                         required
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                        style={{ padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--border)', fontSize: '1rem', outline: 'none', background: 'var(--bg)' }} 
+                        className="responsive-input"
+                        placeholder="Ditt fulle navn"
                       />
                     </div>
                     
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label htmlFor="email" style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-2)' }}>E-post *</label>
+                      <label htmlFor="email" style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-2)' }}>E-post *</label>
                       <input 
                         type="email" 
                         id="email" 
                         required
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                        style={{ padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--border)', fontSize: '1rem', outline: 'none', background: 'var(--bg)' }} 
+                        className="responsive-input"
+                        placeholder="din.epost@adresse.no"
                       />
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label htmlFor="phone" style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-2)' }}>Telefon</label>
+                      <label htmlFor="phone" style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-2)' }}>Telefon</label>
                       <input 
                         type="tel" 
-                        id="phone"
+                        id="phone" 
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                        style={{ padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--border)', fontSize: '1rem', outline: 'none', background: 'var(--bg)' }} 
+                        className="responsive-input"
+                        placeholder="+47"
                       />
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label htmlFor="subject" style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-2)' }}>Emne</label>
+                      <label htmlFor="subject" style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-2)' }}>Emne</label>
                       <input 
                         type="text" 
-                        id="subject"
+                        id="subject" 
                         value={formState.subject}
                         onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                        style={{ padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--border)', fontSize: '1rem', outline: 'none', background: 'var(--bg)' }} 
+                        className="responsive-input"
+                        placeholder="Hva gjelder henvendelsen?"
                       />
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label htmlFor="message" style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-2)' }}>Melding *</label>
+                      <label htmlFor="message" style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-2)' }}>Melding *</label>
                       <textarea 
                         id="message" 
                         required
                         rows={4}
                         value={formState.message}
                         onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                        style={{ padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--border)', fontSize: '1rem', outline: 'none', background: 'var(--bg)', resize: 'vertical' }} 
+                        className="responsive-input"
+                        placeholder="Skriv din melding her..."
+                        style={{ resize: 'vertical' }}
                       />
                     </div>
 
-                    <button type="submit" className="btn btn-pill btn-black btn-md" style={{ marginTop: '10px' }}>
+                    <button type="submit" className="btn-pill-solid" style={{ marginTop: '8px', alignSelf: 'flex-start', width: '100%' }}>
                       Send melding
                     </button>
                   </form>

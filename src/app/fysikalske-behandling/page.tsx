@@ -50,15 +50,16 @@ export default function FysikalskBehandling() {
               {/* Notice pill */}
               <div style={{
                 display: 'inline-flex',
-                alignItems: 'center',
-                gap: '10px',
+                alignItems: 'baseline',
+                gap: '8px',
                 background: 'rgba(197, 155, 109, 0.12)',
                 border: '1px solid rgba(197, 155, 109, 0.35)',
-                padding: '10px 18px',
+                padding: '10px 16px',
                 borderRadius: '12px',
                 fontSize: '0.88rem',
                 color: 'var(--text-1)',
                 fontWeight: 500,
+                flexWrap: 'wrap',
               }}>
                 <span style={{ color: 'var(--accent-coffee)', fontWeight: 700 }}>Merk:</span>
                 <span>Finn-Tore tar ikke imot forsikringspasienter, kun private kunder. Våre øvrige terapeuter har direkteoppgjør med alle forsikringsselskaper.</span>

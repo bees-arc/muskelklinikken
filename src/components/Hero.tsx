@@ -5,10 +5,16 @@ import ScrollReveal from './ScrollReveal'
 
 export default function Hero() {
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     let ticking = false
+
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    checkMobile()
 
     const handleScroll = () => {
       if (!ticking) {
@@ -25,8 +31,12 @@ export default function Hero() {
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', checkMobile, { passive: true })
     handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', checkMobile)
+    }
   }, [])
 
   return (
@@ -34,17 +44,21 @@ export default function Hero() {
       <div
         className="hero-outer-container"
         style={{
-          paddingInline: `${scrollProgress * 24}px`,
-          paddingTop: `${scrollProgress * 16}px`,
-          maxWidth: scrollProgress === 0 ? '100%' : '1380px',
+          paddingInline: isMobile ? '0px' : `${scrollProgress * 24}px`,
+          paddingTop: isMobile ? '0px' : `${scrollProgress * 16}px`,
+          maxWidth: scrollProgress === 0 || isMobile ? '100%' : '1380px',
         }}
       >
         <div
           className="hero-frame-card"
           style={{
-            borderRadius: `${scrollProgress * 36}px`,
-            minHeight: scrollProgress === 0 ? 'calc(100vh - 68px)' : '780px',
-            transform: `scale(${1 - scrollProgress * 0.025})`,
+            borderRadius: isMobile ? '20px' : `${scrollProgress * 36}px`,
+            minHeight: isMobile
+              ? 'calc(100svh - 60px)'
+              : scrollProgress === 0
+              ? 'calc(100vh - 68px)'
+              : '780px',
+            transform: isMobile ? 'none' : `scale(${1 - scrollProgress * 0.025})`,
             transformOrigin: 'top center',
             boxShadow: scrollProgress > 0.05 ? '0 25px 80px rgba(0, 0, 0, 0.75)' : 'none',
             border: scrollProgress > 0.05 ? '1px solid var(--border-card)' : '1px solid transparent',

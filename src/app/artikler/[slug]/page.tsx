@@ -24,56 +24,57 @@ export default async function ArticlePage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: '100px', minHeight: '80vh', backgroundColor: 'var(--bg)' }}>
-        <article style={{ paddingBlock: '80px' }}>
-          <div className="container" style={{ maxWidth: '800px' }}>
+      <main className="subpage-container">
+        <article>
+          <div className="container" style={{ maxWidth: '840px' }}>
             <a 
               href="/artikler" 
               style={{ 
                 display: 'inline-flex', 
                 alignItems: 'center', 
                 gap: '8px', 
-                fontSize: '0.9rem', 
-                color: 'var(--text-3)', 
-                marginBottom: '32px', 
+                fontSize: '0.88rem', 
+                color: 'var(--accent-coffee)', 
+                marginBottom: '24px', 
                 fontWeight: 600 
               }}
             >
               ← Tilbake til artikler
             </a>
 
-            <span style={{ fontSize: '0.9rem', color: 'var(--text-3)', fontWeight: 600, display: 'block', marginBottom: '12px' }}>
-              {article.date}
-            </span>
+            <div className="subpage-header-wrap">
+              <span style={{ fontSize: '0.82rem', color: 'var(--accent-coffee)', fontWeight: 700, display: 'block', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                {article.date}
+              </span>
 
-            <h1 style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '48px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
-              {article.title}
-            </h1>
+              <h1 className="subpage-title" style={{ fontSize: 'clamp(1.8rem, 4.5vw, 2.8rem)', marginBottom: '32px' }}>
+                {article.title}
+              </h1>
+            </div>
 
             {article.image && (
-              <div style={{ width: '100%', height: '400px', borderRadius: '24px', overflow: 'hidden', marginBottom: '48px', border: '1px solid var(--border)' }}>
+              <div className="subpage-banner-card" style={{ height: '340px', marginBottom: '40px' }}>
                 <img 
                   src={article.image} 
                   alt={article.title} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  className="subpage-banner-img"
                 />
               </div>
             )}
 
-            <div style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text-2)' }}>
+            <div style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--text-2)' }}>
               {article.paragraphs.map((p, idx) => {
                 if (p.startsWith('## ')) {
                   return (
                     <h2 
                       key={idx} 
                       style={{ 
-                        fontSize: '1.4rem', 
-                        fontFamily: 'var(--font-chakra)', 
+                        fontSize: '1.35rem', 
+                        fontFamily: 'var(--font-heading)', 
                         fontWeight: 700, 
-                        textTransform: 'uppercase',
-                        marginTop: '40px', 
-                        marginBottom: '20px', 
-                        color: 'var(--text-1)' 
+                        marginTop: '36px', 
+                        marginBottom: '16px', 
+                        color: 'var(--text-pure)' 
                       }}
                     >
                       {p.substring(3)}
@@ -81,7 +82,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   )
                 }
                 return (
-                  <p key={idx} style={{ marginBottom: '24px' }}>
+                  <p key={idx} style={{ marginBottom: '20px' }}>
                     {p}
                   </p>
                 )

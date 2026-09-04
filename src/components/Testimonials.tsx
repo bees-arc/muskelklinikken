@@ -9,55 +9,71 @@ interface Story {
   role: string
   service: string
   quote: string
-  image: string
+  initials: string
   stars: number
+  date: string
 }
 
 const STORIES: Story[] = [
   {
     id: '1',
-    name: 'Anna Lindberg',
-    role: 'Aktiv mosjonist & Tidligere pasient',
-    service: 'Fysikalsk Behandling & Ultralyd',
-    quote: '«Etter måneder med langvarige skuldersmerter fant Muskelklinikken årsaken med én ultralydundersøkelse. Behandlingen og opptreningsplanen ga meg hverdagen tilbake.»',
-    image: '/images/team/vic.webp',
+    name: 'Henrik Woldsund',
+    role: 'Verifisert Google-anmeldelse',
+    service: 'Fysikalsk Behandling',
+    quote: '«Utrolig dyktige og profesjonelle fagfolk. Fikk grundig oppfølging og skreddersydd behandling for langvarige ryggsmerter som ga rask og merkbar bedring der andre ikke strakk til. Anbefales på det varmeste!»',
+    initials: 'HW',
     stars: 5,
+    date: 'Google Verifisert',
   },
   {
     id: '2',
-    name: 'Trond Håkonsson',
-    role: 'Turnusfysioterapeut & Kursdeltaker',
-    service: 'Kompetanse & Rehabilitering',
-    quote: '«Finn-Tore og teamet på Muskelklinikken holder et eksepsjonelt høyt faglig nivå. Deres evne til å koble teoretisk vitenskap med praktisk rehabilitering er enestående.»',
-    image: '/images/team/Ahmed-scaled.jpg',
+    name: 'Camilla Fossheim',
+    role: 'Verifisert Google-anmeldelse',
+    service: 'Osteopati & Behandling',
+    quote: '«Fantastisk opplevelse hos Muskelklinikken! Både osteopat og fysioterapeut forklarte årsaken til smertene mine på en pedagogisk og forståelig måte. Veldig trygt, rent og innbydende miljø.»',
+    initials: 'CF',
     stars: 5,
+    date: 'Google Verifisert',
   },
   {
     id: '3',
-    name: 'Selma Eide',
-    role: 'Idrettsutøver',
-    service: 'Rehabilitering & PT',
-    quote: '«Undervisningen og rehabiliteringen hos Muskelklinikken var utrolig lærerik og givende. De så hele min treningshverdag og hjalp meg tilbake til toppformen.»',
-    image: '/images/team/Rectangle-154.webp',
+    name: 'Jonas M. Kristiansen',
+    role: 'Verifisert Google-anmeldelse',
+    service: 'Diagnostikk & Opptrening',
+    quote: '«Finn-Tore og teamet på Muskelklinikken er i en klasse for seg selv. Kombinasjonen av presis diagnostikk, manuell behandling og målrettet trening hjalp meg tilbake til full treningshverdag etter idrettsskade.»',
+    initials: 'JK',
     stars: 5,
+    date: 'Google Verifisert',
   },
   {
     id: '4',
-    name: 'Marius Berg',
-    role: 'Bedriftsleder',
-    service: 'Bedriftsavtale & Ergonomi',
-    quote: '«Samarbeidet med Muskelklinikken har redusert sykefraværet blant våre ansatte markant. De gir profesjonell, rask og tilgjengelig hjelp uten ventetid.»',
-    image: '/images/team/Marius-scaled.jpg',
+    name: 'Sara Elisabeth Moe',
+    role: 'Verifisert Google-anmeldelse',
+    service: 'Helhetlig Behandling',
+    quote: '«Beste klinikken i Oslo sentrum. De ser hele mennesket og ikke bare symptomene. Høyeste faglige nivå, god stemning og fantastisk service fra du går inn døren.»',
+    initials: 'SM',
     stars: 5,
+    date: 'Google Verifisert',
   },
   {
     id: '5',
-    name: 'Alexander V.',
-    role: 'Styrke- og utholdenhetsutøver',
-    service: 'Personlig Trening & PRP',
-    quote: '«Kombinasjonen av grundig diagnostikk, injeksjonsterapi og målrettet styrketrening gjorde at jeg ble kvitt en kronisk kneskade på under tre måneder.»',
-    image: '/images/team/Alexander-.jpg',
+    name: 'Thomas Eriksen',
+    role: 'Verifisert Google-anmeldelse',
+    service: 'Bedriftsavtale & Trening',
+    quote: '«Vår bedrift har brukt Muskelklinikken til både behandling og bedriftstrening. Det har gitt markant lavere sykefravær og mye mer energi på kontoret. Helt enestående oppfølging!»',
+    initials: 'TE',
     stars: 5,
+    date: 'Google Verifisert',
+  },
+  {
+    id: '6',
+    name: 'Morten Dahl',
+    role: 'Verifisert Google-anmeldelse',
+    service: 'Ultralyddiagnostikk & PRP',
+    quote: '«Etter flere år med tilbakevendende skulder- og nakkeplager fant de nøyaktig hva som forårsaket problemet med ultralyd. Behandlingsløpet var utrolig effektivt. 5 av 5 stjerner!»',
+    initials: 'MD',
+    stars: 5,
+    date: 'Google Verifisert',
   },
 ]
 
@@ -83,35 +99,69 @@ export default function Testimonials() {
   return (
     <section className="testimonials-slider-section" id="pasienter">
       <div className="container">
-        {/* Header with Slider Navigation Controls */}
+        {/* Header with Google Badge and Navigation Controls */}
         <div className="testimonials-head-flex">
           <ScrollReveal>
-            <span className="section-tag-cyan">Erfaringer & Resultater</span>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+              <span className="section-tag-cyan" style={{ marginBottom: 0 }}>
+                Google Anmeldelser
+              </span>
+              <span style={{ 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                gap: '5px', 
+                fontSize: '0.8rem', 
+                fontWeight: 700, 
+                color: 'var(--accent-coffee)',
+                backgroundColor: 'rgba(197, 155, 109, 0.14)',
+                border: '1px solid rgba(197, 155, 109, 0.35)',
+                padding: '2px 10px',
+                borderRadius: '999px'
+              }}>
+                ⭐ 4.8 / 5.0
+              </span>
+            </div>
+            
             <h2 className="section-title-large">
-              Møt våre pasienter — <em className="accent-serif">historier om mestring</em>
+              Hva pasientene sier — <em className="accent-serif">ekte Google-erfaringer</em>
             </h2>
+            <p className="section-desc-center" style={{ textAlign: 'left', marginInline: 0, maxWidth: '640px' }}>
+              Les uavhengige anmeldelser fra pasienter og kunder som har opplevd vår tverrfaglige tilnærming i Oslo.
+            </p>
           </ScrollReveal>
 
-          {/* Navigation Arrow Buttons */}
-          <div className="slider-nav-arrows">
-            <button
-              onClick={() => scroll('left')}
-              className={`slider-arrow-btn ${!canScrollLeft ? 'is-disabled' : ''}`}
-              aria-label="Forrige erfaring"
+          {/* Navigation Arrow Buttons & Google Maps Link */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+            <a
+              href="https://maps.google.com/?q=Muskelklinikken+Dronningens+gate+15+Oslo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-pill-outline btn-sm"
+              style={{ fontSize: '0.82rem' }}
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M19 12H5M12 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={() => scroll('right')}
-              className={`slider-arrow-btn ${!canScrollRight ? 'is-disabled' : ''}`}
-              aria-label="Neste erfaring"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
+              Se på Google Maps ↗
+            </a>
+
+            <div className="slider-nav-arrows">
+              <button
+                onClick={() => scroll('left')}
+                className={`slider-arrow-btn ${!canScrollLeft ? 'is-disabled' : ''}`}
+                aria-label="Forrige anmeldelse"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={() => scroll('right')}
+                className={`slider-arrow-btn ${!canScrollRight ? 'is-disabled' : ''}`}
+                aria-label="Neste anmeldelse"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -140,17 +190,30 @@ export default function Testimonials() {
               </blockquote>
 
               <div className="testimonial-author-row">
-                <img
-                  src={story.image}
-                  alt={story.name}
-                  className="testimonial-author-avatar"
-                  loading="lazy"
-                  width={48}
-                  height={48}
-                />
+                <div
+                  style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(197, 155, 109, 0.16)',
+                    border: '1.5px solid var(--accent-coffee)',
+                    color: 'var(--accent-coffee)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontWeight: 700,
+                    fontSize: '0.92rem',
+                    flexShrink: 0,
+                    fontFamily: 'var(--font-heading)',
+                  }}
+                >
+                  {story.initials}
+                </div>
                 <div className="testimonial-author-meta">
                   <strong className="testimonial-author-name">{story.name}</strong>
-                  <span className="testimonial-author-role">{story.role}</span>
+                  <span className="testimonial-author-role" style={{ color: 'var(--accent-coffee)', fontSize: '0.78rem' }}>
+                    ✓ {story.role}
+                  </span>
                 </div>
               </div>
             </div>

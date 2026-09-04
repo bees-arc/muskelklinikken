@@ -6,36 +6,33 @@ export default function ArtiklerIndex() {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: '100px', minHeight: '80vh', backgroundColor: 'var(--bg)' }}>
-        <section style={{ paddingBlock: '80px' }}>
+      <main className="subpage-container">
+        <section>
           <div className="container">
-            <span className="overline" style={{ display: 'block', marginBottom: '12px', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 700 }}>
-              Fagstoff & Artikler
-            </span>
-            <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', fontFamily: 'var(--font-chakra)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '20px', color: 'var(--text-1)', textTransform: 'uppercase' }}>
-              Våre artikler
-            </h1>
-            <p style={{ fontSize: '1.15rem', color: 'var(--text-2)', maxWidth: '800px', marginBottom: '60px', lineHeight: 1.6 }}>
-              Her deler vi kunnskap, tips, og forskning knyttet til fysioterapi, opptrening, helse og livsstilsendring. Vårt mål er å holde deg oppdatert med evidensbasert fagstoff.
-            </p>
+            {/* Header / Intro */}
+            <div className="subpage-header-wrap">
+              <span className="section-tag-cyan">Fagstoff & Kunnskap</span>
+              <h1 className="subpage-title">
+                Våre artikler
+              </h1>
+              <p className="subpage-subtitle">
+                Her deler vi kunnskap, tips og forskning knyttet til fysioterapi, opptrening, helse og livsstilsendring. Vårt mål er å holde deg oppdatert med evidensbasert fagstoff.
+              </p>
+            </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '30px', marginBottom: '60px' }}>
+            {/* Articles Grid */}
+            <div className="responsive-grid-3" style={{ marginBottom: '60px' }}>
               {ARTICLES.map((article) => (
                 <article 
                   key={article.slug} 
+                  className="subpage-detail-card"
                   style={{ 
-                    backgroundColor: 'var(--bg-card)', 
-                    border: '1px solid var(--border)', 
-                    borderRadius: '16px', 
+                    padding: 0,
                     overflow: 'hidden',
-                    display: 'flex', 
-                    flexDirection: 'column',
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.02)',
-                    transition: 'transform 0.2s ease, box-shadow 0.2s ease'
                   }}
                 >
                   {article.image && (
-                    <div style={{ width: '100%', height: '200px', overflow: 'hidden', borderBottom: '1px solid var(--border)' }}>
+                    <div style={{ width: '100%', height: '200px', overflow: 'hidden', borderBottom: '1px solid var(--border-card)' }}>
                       <img 
                         src={article.image} 
                         alt={article.title} 
@@ -43,25 +40,25 @@ export default function ArtiklerIndex() {
                       />
                     </div>
                   )}
-                  <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                    <span style={{ fontSize: '0.85rem', color: 'var(--text-3)', fontWeight: 600, marginBottom: '12px', display: 'block' }}>
+                  <div style={{ padding: '24px 20px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                    <span style={{ fontSize: '0.8rem', color: 'var(--accent-coffee)', fontWeight: 700, marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                       {article.date}
                     </span>
                     
-                    <h2 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-chakra)', fontWeight: 700, textTransform: 'uppercase', lineHeight: 1.3, marginBottom: '16px', color: 'var(--text-1)' }}>
-                      <a href={`/artikler/${article.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <h2 style={{ fontSize: '1.2rem', fontFamily: 'var(--font-heading)', fontWeight: 700, lineHeight: 1.35, marginBottom: '12px', color: 'var(--text-pure)' }}>
+                      <a href={`/artikler/${article.slug}`} style={{ color: 'inherit' }}>
                         {article.title}
                       </a>
                     </h2>
                     
-                    <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--text-2)', marginBottom: '24px' }}>
+                    <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: 'var(--text-2)', marginBottom: '20px', flexGrow: 1 }}>
                       {article.excerpt}
                     </p>
                     
                     <a 
                       href={`/artikler/${article.slug}`} 
-                      className="btn btn-pill btn-outline btn-sm" 
-                      style={{ marginTop: 'auto', alignSelf: 'flex-start', fontWeight: 600 }}
+                      className="btn-pill-outline btn-sm" 
+                      style={{ alignSelf: 'flex-start', fontWeight: 600 }}
                     >
                       Les mer
                     </a>

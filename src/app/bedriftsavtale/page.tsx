@@ -107,7 +107,7 @@ export default function Bedriftsavtale() {
                   Vi tilbyr foredrag, workshops og individuell coaching for å styrke mental trivsel, forebygge stress og utvikle gode relasjoner på arbeidsplassen. Vår tilnærming passer like godt for ledere som ønsker å utvikle sitt potensial, som for team og ansatte som trenger støtte i endringsprosesser eller utfordrende situasjoner. Vi hjelper dere å bygge en sterk, motstandsdyktig og prestasjonsfremmende kultur, med fokus på både produktivitet og menneskelig utvikling.
                 </p>
 
-                <ul className="subpage-feature-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
+                <ul className="subpage-feature-list responsive-grid-2" style={{ gap: '14px', borderTop: '1px solid var(--border-subtle)', paddingTop: '20px' }}>
                   <li className="subpage-feature-item">
                     <span>Leder- og prestasjonscoaching med Coach Camacho</span>
                   </li>

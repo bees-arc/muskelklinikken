@@ -51,15 +51,16 @@ export default function PersonligTrening() {
               {/* Notice pill */}
               <div style={{
                 display: 'inline-flex',
-                alignItems: 'center',
-                gap: '10px',
+                alignItems: 'baseline',
+                gap: '8px',
                 background: 'rgba(197, 155, 109, 0.12)',
                 border: '1px solid rgba(197, 155, 109, 0.35)',
-                padding: '10px 18px',
+                padding: '10px 16px',
                 borderRadius: '12px',
                 fontSize: '0.88rem',
                 color: 'var(--text-1)',
                 fontWeight: 500,
+                flexWrap: 'wrap'
               }}>
                 <span style={{ color: 'var(--accent-coffee)', fontWeight: 700 }}>Merk:</span>
                 <span>Finn-Tore tar ikke imot forsikringspasienter, kun private kunder.</span>
@@ -76,7 +77,7 @@ export default function PersonligTrening() {
             </div>
 
             {/* Content Cards */}
-            <div className="subpage-grid-2" style={{ marginBottom: '60px' }}>
+            <div className="subpage-grid-2" style={{ marginBottom: '48px' }}>
               <div className="subpage-detail-card">
                 <div className="subpage-card-header">
                   <div>
@@ -103,15 +104,15 @@ export default function PersonligTrening() {
             </div>
 
             {/* Coaches Section */}
-            <div style={{ marginBottom: '60px' }}>
-              <div style={{ marginBottom: '32px' }}>
+            <div style={{ marginBottom: '48px' }}>
+              <div style={{ marginBottom: '28px' }}>
                 <span className="section-tag-cyan">Ekspertise</span>
-                <h2 className="subpage-title" style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.5rem)' }}>
+                <h2 className="subpage-title" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.3rem)' }}>
                   Våre Trenere & Coacher
                 </h2>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '28px' }}>
+              <div className="responsive-coach-grid">
                 {COACHES.map((coach) => (
                   <div 
                     key={coach.name} 
@@ -119,16 +120,15 @@ export default function PersonligTrening() {
                     style={{ 
                       alignItems: 'center', 
                       textAlign: 'center',
-                      padding: '36px 24px',
                     }}
                   >
                     <div style={{ 
-                      width: '130px', 
-                      height: '130px', 
+                      width: '120px', 
+                      height: '120px', 
                       borderRadius: '50%', 
                       overflow: 'hidden', 
                       border: '2px solid var(--accent-coffee)', 
-                      marginBottom: '20px', 
+                      marginBottom: '18px', 
                       backgroundColor: 'var(--bg-surface)', 
                       flexShrink: 0 
                     }}>
@@ -138,14 +138,14 @@ export default function PersonligTrening() {
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                       />
                     </div>
-                    <h3 style={{ fontSize: '1.2rem', fontFamily: 'var(--font-heading)', fontWeight: 700, marginBottom: '6px', color: 'var(--text-pure)' }}>
+                    <h3 style={{ fontSize: '1.12rem', fontFamily: 'var(--font-heading)', fontWeight: 700, marginBottom: '6px', color: 'var(--text-pure)' }}>
                       {coach.name}
                     </h3>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--accent-coffee)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 700, marginBottom: coach.note ? '10px' : '24px' }}>
+                    <p style={{ fontSize: '0.8rem', color: 'var(--accent-coffee)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 700, marginBottom: coach.note ? '10px' : '20px' }}>
                       {coach.role}
                     </p>
                     {coach.note && (
-                      <span style={{ fontSize: '0.78rem', color: 'var(--accent-coffee)', fontWeight: 600, backgroundColor: 'rgba(197, 155, 109, 0.12)', border: '1px solid rgba(197, 155, 109, 0.3)', padding: '4px 14px', borderRadius: '999px', marginBottom: '24px' }}>
+                      <span style={{ fontSize: '0.74rem', color: 'var(--accent-coffee)', fontWeight: 600, backgroundColor: 'rgba(197, 155, 109, 0.12)', border: '1px solid rgba(197, 155, 109, 0.3)', padding: '3px 12px', borderRadius: '999px', marginBottom: '20px' }}>
                         {coach.note}
                       </span>
                     )}
@@ -154,7 +154,7 @@ export default function PersonligTrening() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-pill-solid" 
-                      style={{ marginTop: 'auto', width: '100%', fontSize: '0.88rem', padding: '10px 20px' }}
+                      style={{ marginTop: 'auto', width: '100%', fontSize: '0.86rem', padding: '10px 18px' }}
                     >
                       Book time
                     </a>
