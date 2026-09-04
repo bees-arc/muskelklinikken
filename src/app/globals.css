@@ -1575,17 +1575,17 @@ button {
   min-height: 380px;
   border-radius: 28px;
   overflow: hidden;
-  background: #140f0c;
+  background: transparent;
   border: 1px solid var(--border-card);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 245, 235, 0.15);
+  box-shadow: none;
   display: flex;
   align-items: flex-end;
   text-decoration: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 .service-hero-card:hover {
   border-color: var(--border-coffee);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), var(--shadow-coffee);
+  box-shadow: none;
 }
 
 .service-hero-media-wrap {
@@ -1724,9 +1724,9 @@ button {
     position: relative;
     border-radius: 24px;
     overflow: hidden;
-    background: #140f0c;
+    background: transparent;
     border: 1px solid var(--border-card);
-    box-shadow: var(--shadow-md);
+    box-shadow: none;
     display: flex;
     align-items: flex-end;
     text-decoration: none;
